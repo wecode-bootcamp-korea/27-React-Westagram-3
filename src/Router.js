@@ -11,20 +11,18 @@ import MainLee from './pages/jihyunLee/Main/MainLee';
 
 function Router() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login-oh" element={<LoginOh />} />
-          <Route path="/login-kim" element={<LoginKim />} />
-          <Route path="/login-won" element={<LoginWon />} />
-          <Route path="/login-lee" element={<LoginLee />} />
-          <Route path="/main-oh" element={<MainOh />} />
-          <Route path="/main-kim" element={<MainKim />} />
-          <Route path="/main-won" element={<MainWon />} />
-          <Route path="/main-lee" element={<MainLee />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login-oh" element={<LoginOh />} />
+        <Route path="/login-kim" element={<LoginKim />} />
+        <Route path="/login-won" element={<LoginWon />} />
+        <Route path="/login-lee" element={<LoginLee />} />
+        <Route path="/main-oh" element={<MainOh />} />
+        <Route path="/main-kim" element={<MainKim />} />
+        <Route path="/main-won" element={<MainWon />} />
+        <Route path="/main-lee" element={<MainLee />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

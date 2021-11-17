@@ -1,0 +1,126 @@
+@import '../../../styles/common.scss';
+
+.main-page {
+  .wrapper {
+    background: $white;
+    border: $border-gray;
+  }
+
+  .moreDetail {
+    color: $color-gray;
+  }
+
+  .input {
+    padding: 14px;
+    border: $border-gray;
+    border-radius: 4px;
+    background: $bg-gray;
+  }
+
+  .input::placeholder {
+    color: $color-gray;
+    font-weight: 500;
+  }
+
+  button {
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+    border: $border-gray;
+  }
+
+  display: flex;
+  justify-content: center;
+  min-width: 800px;
+  background: $bg-gray;
+
+  /* COMMON */
+
+  .dropdownSquare {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: $bg-gray;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 3px 0px #e7e7e7;
+  }
+
+  .dropdown {
+    padding: 11px 0;
+    background: $bg-gray;
+    box-shadow: 0px 0px 6px -1px #d3d3d3;
+    border: $border-gray;
+    border-radius: 5px;
+  }
+
+  /* MAIN */
+
+  .main-btn {
+    color: $btn-blue;
+    cursor: pointer;
+    opacity: 1;
+
+    &--disable {
+      opacity: 0.5;
+      cursor: auto;
+    }
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 90px;
+    max-width: 930px;
+    padding: 0 10px;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  /* MAIN RIGHT */
+  .main-right {
+    flex: 3;
+    margin-left: 20px;
+
+    & > div:nth-child(n) {
+      margin-top: 10px;
+    }
+
+    .right-wrapper {
+      padding: 15px;
+    }
+
+    .right-header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 5px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .right-title {
+      color: $color-gray;
+    }
+
+    .show-all {
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .main-page {
+      min-width: 500px;
+    }
+    .main-right {
+      display: none;
+    }
+  }
+}

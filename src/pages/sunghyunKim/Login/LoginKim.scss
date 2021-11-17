@@ -1,0 +1,99 @@
+@import '../../../styles/common.scss';
+
+.login-page {
+  .wrapper {
+    background: $white;
+    border: $border-gray;
+  }
+
+  .moreDetail {
+    color: $color-gray;
+  }
+
+  .input {
+    padding: 14px;
+    border: $border-gray;
+    border-radius: 4px;
+    background: $bg-gray;
+  }
+
+  .input::placeholder {
+    color: $color-gray;
+    font-weight: 500;
+  }
+
+  button {
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+    border: $border-gray;
+  }
+
+  height: 100%;
+  min-height: 100vh;
+  @include flex-center;
+
+  .Wrapper {
+    @include flex-center;
+    flex-direction: column;
+    width: 500px;
+    padding: 40px 60px;
+    border: $border-gray;
+    background-color: $white;
+  }
+
+  .logo {
+    margin-bottom: 50px;
+    font-size: 70px;
+    font-family: 'Lobster', cursive;
+  }
+
+  .contant {
+    width: 100%;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .form input {
+    width: 100%;
+    font-size: 17px;
+  }
+
+  .id {
+    margin-bottom: 10px;
+  }
+
+  .loginBtn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 150px;
+    background: $btn-blue;
+    color: $white;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: 1;
+
+    &--disable {
+      opacity: 0.5;
+      cursor: auto;
+    }
+  }
+
+  .forgotPassword {
+    font-weight: 600;
+    font-size: 19px;
+    color: $color-blue;
+  }
+}

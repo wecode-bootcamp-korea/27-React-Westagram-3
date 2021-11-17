@@ -1,0 +1,44 @@
+@import '../../../../styles/common.scss';
+
+.stories {
+  height: 140px;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.story {
+  display: flex;
+  margin: 7px 0;
+
+  img {
+    padding: 1px;
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(to left bottom, #ff5f5f, #fdae65) border-box;
+    border: 2px solid transparent;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 13px;
+    margin-left: 5px;
+
+    & > span:first-child {
+      color: $color-black;
+      font-weight: 700;
+    }
+
+    & > span:last-child {
+      margin-top: 2px;
+      color: $color-gray;
+    }
+  }
+}

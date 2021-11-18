@@ -38,7 +38,19 @@
   height: 100%;
 }
 
+@mixin font_strong {
+  font-weight: 600;
+}
+
+@mixin main_right_both {
+  margin-top: 15px;
+  border: 1px solid lightgrey;
+  background-color: white;
+  overflow-y: auto;
+}
+
 $color_dark_gray : #171717;
 $color_light_gray : #d3d3d3;
+$color_background : #fafafa;
 $padding_small : 14px;
 $icon_small : 24px;

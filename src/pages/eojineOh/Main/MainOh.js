@@ -1,33 +1,11 @@
 import React from 'react';
+import Nav from '../../../components/Nav/Nav';
 import './MainOh.scss';
 
 function Main() {
   return (
     <div className="main">
-      <nav className="navBar">
-        <div className="navWrapper">
-          <div className="logoAndName">
-            <img
-              className="logo"
-              src="/images/eojineOh/instagram.png"
-              alt="instagramLogo"
-            />
-            <span className="name">Westagram</span>
-          </div>
-          <input type="text" placeholder="검색" />
-          <ul className="icons">
-            <li className="navigate">
-              <img src="/images/eojineOh/explore.png" alt="explore" />
-            </li>
-            <li className="likeIssue">
-              <img src="/images/eojineOh/heart.png" alt="heart" />
-            </li>
-            <li className="myInfo">
-              <img src="/images/eojineOh/profile.png" alt="profile" />
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Nav />
       <main>
         <div className="feeds">
           <article>
@@ -78,8 +56,7 @@ function Main() {
                 </span>
                 <button className="showMoreBtn">더 보기</button>
               </div>
-              <div className="reply" />
-              <div className="hoursAgo">42분 전</div>
+              <div className="reply" /> <div className="hoursAgo">42분 전</div>
             </div>
             <div className="replyAndBtn">
               <input
@@ -247,7 +224,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -259,7 +236,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -271,7 +248,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -283,7 +260,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -295,7 +272,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -307,7 +284,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -319,7 +296,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -331,7 +308,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -343,7 +320,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -355,7 +332,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>
@@ -367,7 +344,7 @@ function Main() {
                 />
                 <div className="others">
                   <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
+                  <div className="ago">회원님을 위한 추천입니다.</div>
                 </div>
                 <button className="followOther">팔로우</button>
               </div>

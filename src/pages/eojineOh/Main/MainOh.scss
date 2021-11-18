@@ -1,0 +1,346 @@
+@import "src/styles/variables.scss";
+
+
+.main {
+  background-color: $color_background;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* main styling */
+main {
+  position: relative;
+  width: 935px;
+  margin: 0 auto;
+  padding: 30px 0px 30px;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+
+  .feeds {
+    article {
+      width: 616px;
+      border: 1px solid $color_light_gray;
+      background-color: white;
+
+      /* feedUpper styling */
+      .feedUpper {
+        @include flexSpaceBetween();
+        align-items: center;
+        height: 60px;
+        padding: $padding_small;
+
+        .imageAndId {
+          @include flexStart();
+
+          .profileImage {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+          }
+
+          .profileId {
+            margin: auto 0;
+            margin-left: 15px;
+            padding: 2px;
+            @include font_strong();
+          }
+        }
+
+        i {
+          font-size: 15px;
+        }
+      }
+    }
+
+    /* feedImage styling */
+    .feedImage {
+      height: 614px;
+
+      img {
+        @include widthHeight_100();
+      }
+    }
+
+    /* feedInfo styling */
+    .feedInfo {
+      position: relative;
+
+      /* feedIcons styling */
+      .feedIcons {
+        @include flexSpaceBetween();
+        box-sizing: content-box;
+        height: 40px;
+        padding: 6px 16px 8px;
+
+        .iconsLeft img {
+          box-sizing: content-box;
+          @include widthHeight_24();
+          padding: 8px;
+        }
+
+        img:first-child {
+          padding-left: 0px;
+        }
+
+        .iconsRight {
+          box-sizing: content-box;
+          @include widthHeight_24();
+          padding: 8px;
+        }
+      }
+    }
+
+    .feedLike {
+      @include flexStart();
+      align-items: center;
+      height: 18px;
+      margin-bottom: 8px;
+      padding: 0px 16px;
+
+      .profileImage {
+        width: 20px;
+        height: 20px;
+        border: 1px solid $color_light_gray;
+        border-radius: 50%;
+      }
+
+      /* feedLike styling */
+      .liketext {
+        margin-left: 10px;
+        font-size: 14px;
+
+        span {
+          @include font_strong();
+        }
+      }
+    }
+
+    /* feedText styling */
+    .feedText {
+      padding: 0px 16px;
+      @include flexStart();
+      align-items: center;
+      margin-bottom: 5px;
+
+      .profileId {
+        margin-right: 10px;
+        font-size: 16px;
+        @include font_strong();
+      }
+
+      .feedDescription {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .showMoreBtn {
+        border: none;
+        background-color: transparent;
+        color: #8e8e8e;
+      }
+    }
+
+    /* reply styling */
+    .reply {
+      .replyChunk {
+        @include flexSpaceBetween();
+        margin-bottom: 5px;
+        padding: 0px 16px;
+      }
+
+      .replyItSelf {
+        @include flexStart();
+        align-items: center;
+
+        .shownReplyId {
+          margin-right: 10px;
+          font-size: 14px;
+          @include font_strong();
+        }
+
+        .shownReplyText {
+          font-size: 14px;
+          font-weight: 400;
+        }
+
+        img {
+          box-sizing: content-box;
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    /* hoursAgo styling */
+    .hoursAgo {
+      @include flexVerCenter();
+      height: 19px;
+      margin: 0 0 16px;
+      padding: 0px 16px;
+      font-size: 10px;
+    }
+
+    /* reply and button styling */
+    .replyAndBtn {
+      @include flexSpaceBetween();
+      height: 48px;
+      padding: 6px 16px;
+      border-top: 1px solid lightgrey;
+
+      .reply {
+        border: none;
+        width: 90%;
+        font-size: 14px;
+        color: #262626;
+      }
+
+      .replyBtn {
+        border: none;
+        background-color: transparent;
+        color: #cce6fd;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .main-right {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 293px;
+
+    .rightMyProfile {
+      @include flexStart();
+      height: 56px;
+
+      .image {
+        align-self: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
+
+      .profileIdAndText {
+        align-self: center;
+        padding-left: 20px;
+
+        * {
+          height: 18px;
+          font-size: 14px;
+        }
+
+        .profileId {
+          @include font_strong();
+        }
+
+        .profileText {
+          color: #8e8e8e;
+        }
+      }
+    }
+
+    .upper {
+      @include flexSpaceBetween();
+      @include font_strong();
+      align-items: center;
+      height: 32px;
+      padding: 0 10px;
+      position: sticky;
+      top: 0px;
+      background-color: white;
+      z-index: 1;
+      border-bottom: 1px solid $color_light_gray;
+
+      button {
+        font-size: 12px;
+        color: #262626;
+      }
+
+      .title {
+        font-size: 14px;
+        color: #8e8e8e;
+      }
+    }
+
+    .rightStory {
+      height: 200px;
+      @include main_right_both();
+    }
+
+    .recommend {
+      height: 175px;
+      @include main_right_both();
+    }
+
+    .rightInfo {
+      margin-top: 20px;
+      font-size: 11px;
+      line-height: 13px;
+      font-weight: 400;
+      color: #c7c7c7;
+    }
+  }
+}
+
+/* othersWrapper styling */
+.othersWrapper {
+  margin: 0 10px;
+
+  .othersProfile {
+    @include flexStart();
+    position: relative;
+    height: 48px;
+    padding: 8px 0px;
+
+    img {
+      align-self: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .others {
+      align-self: center;
+      margin: auto 0px;
+      padding-left: 10px;
+
+      @include font_strong();
+
+      .profileId {
+        height: 17px;
+        padding-top: 2px;
+        font-size: 14px;
+      }
+
+      .ago {
+        height: 16px;
+        padding-top: 2px;
+        font-size: 12px;
+        color: #8e8e8e;
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 0px;
+      top: 16px;
+      color: #0095f6;
+      @include font_strong();
+      line-height: 16px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .main-right {
+    display: none;
+  }
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../styles/common.scss';
 
 .nav {
@@ -213,8 +214,66 @@
 
         &:last-child {
           border-top: $border-gray;
+=======
+@import "src/styles/variables.scss";
+
+.navBar {
+  @include flexHorCenter();
+  height: 55px;
+  border-bottom: 1px solid $color_light_gray;
+  background-color: white;
+
+  .navWrapper {
+    @include flexSpaceBetween();
+    align-items: center;
+    width: 935px;
+    padding: 0 20px;
+
+    .logoAndName {
+      display: flex;
+      justify-content: baseline;
+      width: 200px;
+
+      .logo {
+        height: 30px;
+        padding-right: $padding_small;
+        border-right: 2px solid $color_dark_gray;
+        color: $color_dark_gray;
+      }
+
+      .name {
+        text-align: center;
+        padding-left: $padding_small;
+        color: $color_dark_gray;
+        font-family: "Lobster", cursive;
+        font-size: 26px;
+      }
+    }
+
+    input {
+      width: 200px;
+      height: 30px;
+      padding: 7px;
+      border: 1px solid $color_light_gray;
+      border-radius: 5px;
+      background-color: $color_background;
+      text-align: center;
+    }
+
+    .icons {
+      @include flexSpaceBetween();
+      width: 150px;
+
+      li {
+        img {
+          height: 25px;
+>>>>>>> 21ea6de0cfe6e3590e0e1e8dc12f3325abdda9ef
         }
       }
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 21ea6de0cfe6e3590e0e1e8dc12f3325abdda9ef

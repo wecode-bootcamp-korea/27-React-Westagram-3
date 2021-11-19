@@ -1,8 +1,10 @@
 import React from 'react';
 import { useRef, useState } from 'react';
-import Comment from '../../Comment/Comment';
+import Comment from '../Comment/Comment';
 import FeedBtn from '../FeedBtn/FeedBtn';
 import FeedHeader from '../FeedHeader/FeedHeader';
+import './Feed.scss';
+
 function Feed({ userNickName, commentsLength, currentComments }) {
   const [commentValid, setCommentValid] = useState(false);
   const [comments, setComments] = useState(currentComments);

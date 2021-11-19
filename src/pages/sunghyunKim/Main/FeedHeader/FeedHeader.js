@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './FeedHeader.scss';
 function FeedHeader() {
   return (
     <div className="feed__header feed__padding">

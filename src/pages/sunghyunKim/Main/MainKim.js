@@ -1,7 +1,7 @@
 import React from 'react';
 import './MainKim.scss';
 import { useState } from 'react';
-import Nav from './Nav/Nav';
+import Nav from '../../../components/Nav/Nav';
 import Footer from './Footer/Footer';
 import Recommends from './Recommends/Recommends';
 import Stories from './Stories/Stories';

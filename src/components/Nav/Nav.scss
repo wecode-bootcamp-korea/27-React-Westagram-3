@@ -1,4 +1,50 @@
-@import '../../styles/common.scss';
+// @import '../../styles/common.scss';
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$bg-gray: #fafafa;
+
+$border-light-gray: #ededed;
+
+$color-light-gray: #b1b1b1;
+$color-gray: #a2a2a2;
+$color-black: #343434;
+$color-light-blue: #c4e1fb;
+$color-blue: #39618b;
+
+$btn-blue--hover: #c4e1fb;
+$btn-blue: #5bb2ff;
+
+$white: #fff;
+
+$border-gray: $border-light-gray 1px solid;
+
+//  COMMON CSS
+
+* {
+  box-sizing: border-box;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  background: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+b {
+  font-weight: 600;
+}
 
 .nav {
   @include flex-center;
@@ -9,6 +55,35 @@
   background: $white;
   border-bottom: $border-gray;
   z-index: 1000;
+
+  .input {
+    padding: 14px;
+    border: $border-gray;
+    border-radius: 4px;
+    background: $bg-gray;
+  }
+
+  .input::placeholder {
+    color: $color-gray;
+    font-weight: 500;
+  }
+
+  .dropdownSquare {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: $bg-gray;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 3px 0px #e7e7e7;
+  }
+
+  .dropdown {
+    padding: 11px 0;
+    background: $bg-gray;
+    box-shadow: 0px 0px 6px -1px #d3d3d3;
+    border: $border-gray;
+    border-radius: 5px;
+  }
 
   img {
     border: none;

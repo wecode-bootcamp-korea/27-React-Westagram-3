@@ -1,13 +1,21 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import './LoginOh.scss';
 
 function Login() {
   const navigate = useNavigate();
-
   const goToMain = () => {
     navigate('/main-oh');
+  };
+
+  const [state, setState] = useState('');
+  const handleIdInput = e => {
+    let state = e.target.value;
+    // console.log('ID : ', state);
+  };
+  const handlePwdInput = e => {
+    let state = e.target.value;
+    // console.log('PWD : ', state);
   };
 
   return (
@@ -21,8 +29,14 @@ function Login() {
             className="inputId"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
+            onChange={handleIdInput}
           />
-          <input className="inputPwd" type="password" placeholder="비밀번호" />
+          <input
+            className="inputPwd"
+            type="password"
+            placeholder="비밀번호"
+            onChange={handlePwdInput}
+          />
           <button className="loginBtn" onClick={goToMain}>
             로그인
           </button>

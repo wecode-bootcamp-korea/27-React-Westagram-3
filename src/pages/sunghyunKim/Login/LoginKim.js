@@ -16,14 +16,6 @@ function LoginKim() {
   const navigate = useNavigate();
 
   function onBtnClick() {
-    if (!id.includes('@')) {
-      alert(`아이디에 '@'이 포함되어야 합니다.`);
-      return;
-    }
-    if (!(password.length >= 5)) {
-      alert(`비밀번호는 5자리 이상이어야 합니다.`);
-      return;
-    }
     navigate('/main-kim');
     alert(`로그인 되었습니다.\n${id}님 좋은 하루되세요 :)`);
   }
@@ -63,7 +55,9 @@ function LoginKim() {
           </form>
           <button
             className={`loginBtn ${
-              !!id && !!password ? '' : 'loginBtn--disable'
+              id.includes('@') && password.length >= 5
+                ? ''
+                : 'loginBtn--disable'
             }`}
             onClick={onBtnClick}
             style={{ disabled: !id || !password }}

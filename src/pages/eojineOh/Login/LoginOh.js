@@ -8,14 +8,14 @@ function Login() {
     navigate('/main-oh');
   };
 
-  const [state, setState] = useState('');
+  const [inputId, setIdInput] = useState('');
+  const [inputPwd, setPwdInput] = useState('');
+
   const handleIdInput = e => {
-    let state = e.target.value;
-    // console.log('ID : ', state);
+    setIdInput(e.target.value);
   };
   const handlePwdInput = e => {
-    let state = e.target.value;
-    // console.log('PWD : ', state);
+    setPwdInput(e.target.value);
   };
 
   return (
@@ -29,12 +29,14 @@ function Login() {
             className="inputId"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
+            value={inputId}
             onChange={handleIdInput}
           />
           <input
             className="inputPwd"
             type="password"
             placeholder="비밀번호"
+            value={inputPwd}
             onChange={handlePwdInput}
           />
           <button className="loginBtn" onClick={goToMain}>

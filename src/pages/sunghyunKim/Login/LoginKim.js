@@ -60,7 +60,7 @@ function LoginKim() {
                 : 'loginBtn--disable'
             }`}
             onClick={onBtnClick}
-            style={{ disabled: !id || !password }}
+            style={{ disabled: !id.includes('@') || !(password.length >= 5) }}
           >
             로그인
           </button>

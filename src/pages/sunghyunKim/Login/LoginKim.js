@@ -7,12 +7,14 @@ import { useNavigate } from 'react-router-dom';
 function LoginKim() {
   const [form, setForm] = useState({ id: '', password: '' });
   const { id, password } = form;
-  const onFormChange = e => {
+
+  const handleInput = e => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
   const navigate = useNavigate();
+
   function onBtnClick() {
     if (!id.includes('@')) {
       alert(`아이디에 '@'이 포함되어야 합니다.`);
@@ -41,7 +43,7 @@ function LoginKim() {
                 type="text"
                 name="id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
-                onChange={onFormChange}
+                onChange={handleInput}
                 onKeyUp={onKeyup}
                 autoComplete="username"
               />
@@ -54,7 +56,7 @@ function LoginKim() {
                 name="password"
                 placeholder="비밀번호"
                 onKeyUp={onKeyup}
-                onChange={onFormChange}
+                onChange={handleInput}
                 autoComplete="current-password"
               />
             </label>

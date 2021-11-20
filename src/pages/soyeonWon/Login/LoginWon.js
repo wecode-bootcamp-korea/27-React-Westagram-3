@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginWon.scss';
 
@@ -7,6 +7,17 @@ function Login() {
 
   const goToMain = () => {
     navigate('/main-won');
+  };
+
+  const [inputId, setInputId] = useState('');
+  const [inputPw, setInputPw] = useState('');
+
+  const handleIdInput = event => {
+    setInputId(event.target.value);
+  };
+
+  const handlePwInput = event => {
+    setInputPw(event.target.value);
   };
 
   return (
@@ -22,8 +33,17 @@ function Login() {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               id="inputId"
+              value={inputId}
+              onChange={handleIdInput}
             />
-            <input type="text" placeholder="비밀번호" id="inputPw" />
+
+            <input
+              type="text"
+              placeholder="비밀번호"
+              id="inputPw"
+              value={inputPw}
+              onChange={handlePwInput}
+            />
 
             <div>
               <button className="button" onClick={goToMain}>

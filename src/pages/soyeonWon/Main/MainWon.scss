@@ -74,14 +74,13 @@
   .mainWrapper {
     width: 935px;
     margin: 0 auto;
+    margin-top: 50px;
     display: flex;
-    padding-top: 83px;
+    padding-top: 43px;
     justify-content: space-between;
 
     .feeds {
       background-color: #fff;
-      border: 1px solid #dbdbdb;
-      width: 600px;
       border-radius: 3px;
 
       .article {
@@ -230,6 +229,8 @@
         margin-right: 16px;
       }
 
+      div {
+      }
       .profile {
         .username {
           font-weight: bold;
@@ -271,7 +272,9 @@
 
       .storyContents {
         .profileBoxStory {
-          @include flex-align-center;
+          // @include flex-align-center;
+          display: flex;
+          align-items: center;
           padding: 0 16px 8px 16px;
           border-radius: 3px;
 

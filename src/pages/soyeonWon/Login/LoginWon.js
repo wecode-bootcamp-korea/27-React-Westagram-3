@@ -9,8 +9,8 @@ function LoginWon() {
     navigate('/main-won');
   };
 
-  const [inputId, setInputId] = useState('');
-  const [inputPw, setInputPw] = useState('');
+  let [inputId, setInputId] = useState('');
+  let [inputPw, setInputPw] = useState('');
 
   const handleIdInput = event => {
     setInputId(event.target.value);
@@ -46,9 +46,15 @@ function LoginWon() {
             />
 
             <div>
-              <button className="button" onClick={goToMain}>
-                로그인
-              </button>
+              {inputId.includes('@') && inputPw.length >= 5 ? (
+                <button className="button" onClick={goToMain} disabled={false}>
+                  로그인
+                </button>
+              ) : (
+                <button className="button" onClick={goToMain} disabled={true}>
+                  로그인
+                </button>
+              )}
             </div>
           </div>
 

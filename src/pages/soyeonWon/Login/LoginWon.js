@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginWon.scss';
 
-function Login() {
+function LoginWon() {
   const navigate = useNavigate();
 
   const goToMain = () => {

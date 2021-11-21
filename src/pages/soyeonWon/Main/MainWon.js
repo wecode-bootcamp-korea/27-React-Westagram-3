@@ -2,7 +2,7 @@ import React from 'react';
 import './MainWon.scss';
 import Nav from '../../../components/Nav/Nav';
 
-function Main() {
+function MainWon() {
   return (
     <body className="main">
       <Nav />

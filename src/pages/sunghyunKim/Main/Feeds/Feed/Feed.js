@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRef, useState } from 'react';
-import Comment from '../Comment/Comment';
-import FeedBtn from '../FeedBtn/FeedBtn';
-import FeedHeader from '../FeedHeader/FeedHeader';
+import Comment from './Comment/Comment';
+import FeedBtn from './FeedBtn/FeedBtn';
+import FeedHeader from './FeedHeader/FeedHeader';
 import './Feed.scss';
 
 function Feed({ userNickName, commentsLength, currentComments }) {

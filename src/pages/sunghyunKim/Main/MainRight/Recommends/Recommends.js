@@ -1,20 +1,7 @@
 import React from 'react';
+import Recommend from './Recommend/Recommend';
 import './Recommends.scss';
-function Recommend({ recommend }) {
-  const { img, username, info } = recommend;
-  return (
-    <li className="recommend">
-      <div className="recommend__main">
-        <img src={`/images/sunghyunKim/${img}`} alt="profile" />
-        <div className="recommend__info">
-          <span>{username}</span>
-          <span>{info}</span>
-        </div>
-      </div>
-      <button className="main-btn">팔로우</button>
-    </li>
-  );
-}
+
 function Recommends() {
   const recommends = [
     { img: 'p5.jpeg', username: 'abd_world', info: 'ee_me님 외 2명이...' },

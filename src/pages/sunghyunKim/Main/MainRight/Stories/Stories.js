@@ -1,18 +1,7 @@
 import React from 'react';
 import './Stories.scss';
+import Story from './Story/Story';
 
-function StoryItem({ story }) {
-  const { img, username, time } = story;
-  return (
-    <li className="story">
-      <img src={`/images/sunghyunKim/${img}`} alt="profile" />
-      <div className="story__info">
-        <span>{username}</span>
-        <span>{time}</span>
-      </div>
-    </li>
-  );
-}
 function Stories() {
   const stories = [
     {
@@ -44,7 +33,7 @@ function Stories() {
       </div>
       <ul className="stories">
         {stories.map((story, i) => (
-          <StoryItem story={story} key={i} />
+          <Story story={story} key={i} />
         ))}
       </ul>
     </div>

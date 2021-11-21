@@ -1,21 +1,15 @@
-@import '../../../../styles/common.scss';
-
-.recommend {
+@import '../../../../../../styles/common.scss';
+.story {
   display: flex;
-  justify-content: space-between;
   margin: 7px 0;
 
-  &__main {
-    display: flex;
-
-    img {
-      object-fit: cover;
-    }
-  }
-
-  & > button {
-    font-size: 13px;
-    font-weight: 600;
+  img {
+    padding: 1px;
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(to left bottom, #ff5f5f, #fdae65) border-box;
+    border: 2px solid transparent;
+    vertical-align: middle;
+    object-fit: cover;
   }
 
   &__info {

@@ -1,0 +1,12 @@
+@import '../../../../../styles/common.scss';
+
+.stories {
+  height: 140px;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

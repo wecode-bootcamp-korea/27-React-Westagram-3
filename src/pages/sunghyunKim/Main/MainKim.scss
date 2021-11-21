@@ -86,41 +86,10 @@
   }
 
   /* MAIN RIGHT */
-  .main-right {
-    flex: 3;
-    margin-left: 20px;
-
-    & > div:nth-child(n) {
-      margin-top: 10px;
-    }
-
-    .right-wrapper {
-      padding: 15px;
-    }
-
-    .right-header {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 5px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .right-title {
-      color: $color-gray;
-    }
-
-    .show-all {
-      cursor: pointer;
-    }
-  }
 
   @media (max-width: 900px) {
     .main-page {
       min-width: 500px;
-    }
-    .main-right {
-      display: none;
     }
   }
 }

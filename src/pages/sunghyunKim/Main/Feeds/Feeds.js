@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Feed from './Feed/Feed';
 import './Feeds.scss';
 function Feeds() {
-  const feed1Comment = [
-    {
-      nickName: 'tjdgus05',
-      commentText: '이쁘다~~',
-      commentId: 1,
-      heartActive: true,
-    },
-  ];
+  const [comments, setcomments] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json')
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        setcomments(res);
+      });
+  }, []);
+
   return (
     <section className="feeds">
-      <Feed
-        userNickName="ria"
-        commentsLength="2"
-        currentComments={feed1Comment}
-      />
+      <Feed userNickName="ria" currentComments={comments} />
     </section>
   );
 }

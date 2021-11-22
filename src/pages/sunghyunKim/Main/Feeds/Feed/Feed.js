@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRef, useState } from 'react';
 import Comment from './Comment/Comment';
 import FeedBtn from './FeedBtn/FeedBtn';
 import FeedHeader from './FeedHeader/FeedHeader';
 import './Feed.scss';
 
-function Feed({ userNickName, commentsLength, currentComments }) {
+function Feed({ userNickName, currentComments }) {
   const [commentValid, setCommentValid] = useState(false);
-  const [comments, setComments] = useState(currentComments);
+  const [comments, setComments] = useState([]);
   const [commentInput, setCommentInput] = useState('');
 
-  const nextCommnetId = useRef(commentsLength + 1);
+  const nextCommnetId = useRef(currentComments.length + 1);
+
+  useEffect(() => {
+    setComments(currentComments);
+  }, [currentComments]);
 
   const onCreateComment = () => {
     const commentText = commentInput.trim();

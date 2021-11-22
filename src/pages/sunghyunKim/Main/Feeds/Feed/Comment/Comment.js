@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Comment({ onHeartClick, onDeleteComment, comment }) {
-  const { nickName, commentText, commentId, heartActive } = comment;
+  const { nickName, commentText, commentId, isLiked } = comment;
   return (
     <div className="comment" key={commentId}>
       <p className="comment__content">
@@ -14,7 +14,7 @@ function Comment({ onHeartClick, onDeleteComment, comment }) {
           onClick={() => onDeleteComment(commentId)}
         />
         <i
-          className={heartActive ? 'fas fa-heart' : `far fa-heart`}
+          className={isLiked ? 'fas fa-heart' : `far fa-heart`}
           onClick={() => onHeartClick(commentId)}
         />
       </div>

@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router';
 import './LoginOh.scss';
 
 function Login() {
+  // 로그인 버튼 누르면 /main-oh 페이지로 이동.
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/main-oh');
   };
 
+  // Mission 1 : ID와 Pwd input의 값에 변화가 생기면 그 값이 state로 저장.
   const [inputId, setIdInput] = useState('');
   const [inputPwd, setPwdInput] = useState('');
 
@@ -17,6 +19,8 @@ function Login() {
   const handlePwdInput = e => {
     setPwdInput(e.target.value);
   };
+
+  const isValid = inputId.includes('@') && inputPwd.length >= 5;
 
   return (
     <div className="login">
@@ -39,7 +43,10 @@ function Login() {
             value={inputPwd}
             onChange={handlePwdInput}
           />
-          <button className="loginBtn" onClick={goToMain}>
+          <button
+            className={'loginBtn' + (isValid ? ' active' : ' inactive')}
+            onClick={goToMain}
+          >
             로그인
           </button>
         </div>

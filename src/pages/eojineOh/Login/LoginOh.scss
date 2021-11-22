@@ -53,10 +53,14 @@
         border-radius: 6px;
         color: white;
         font-size: 18px;
-      }
 
-      .loginBtn:hover {
-        cursor: pointer;
+        &.active {
+          background-color: #0095f6;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
 
@@ -71,11 +75,3 @@
     }
   }
 }
-
-// .loginBtn.active {
-//   background-color: #0095f6;
-
-//   :hover {
-//     cursor: pointer;
-//   }
-// }

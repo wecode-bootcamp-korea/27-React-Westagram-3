@@ -48,29 +48,37 @@
       .loginBtn {
         width: 258px;
         height: 36px;
-        background-color: #c4e1fb;
+        background-color: #0095f6;
         border: 1px solid transparent;
         border-radius: 6px;
         color: white;
         font-size: 18px;
 
-        &.active {
-          background-color: #0095f6;
+        &:hover {
+          cursor: pointer;
+        }
 
-          &:hover {
-            cursor: pointer;
-          }
+        &:disabled {
+          background-color: #c4e1fb;
+        }
+
+        &:focus {
+          outline: none;
         }
       }
     }
+  }
 
-    .forgotPwd {
-      @include flexHorCenter();
-      margin-top: 90px;
+  .forgotPwd {
+    @include flexHorCenter();
+    margin-top: 90px;
 
-      a {
-        text-decoration: none;
-        color: #345e87;
+    a {
+      text-decoration: none;
+      color: #345e87;
+
+      &:focus {
+        outline: none;
       }
     }
   }

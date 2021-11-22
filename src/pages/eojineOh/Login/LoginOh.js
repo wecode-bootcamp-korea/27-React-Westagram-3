@@ -44,8 +44,9 @@ function Login() {
             onChange={handlePwdInput}
           />
           <button
-            className={'loginBtn' + (isValid ? ' active' : ' inactive')}
+            className="loginBtn"
             onClick={goToMain}
+            disabled={isValid ? false : true}
           >
             로그인
           </button>

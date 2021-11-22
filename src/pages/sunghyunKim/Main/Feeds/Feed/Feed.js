@@ -5,16 +5,21 @@ import FeedBtn from './FeedBtn/FeedBtn';
 import FeedHeader from './FeedHeader/FeedHeader';
 import './Feed.scss';
 
-function Feed({ userNickName, currentComments }) {
-  const [commentValid, setCommentValid] = useState(false);
+function Feed({ feedInfo }) {
+  const currentUser = 'ria';
+
+  const [feed, setFeed] = useState(feedInfo);
+  const { feedUserInfo, feedImg, whoLiked, feedContent, time } = feed;
   const [comments, setComments] = useState([]);
+  const [commentValid, setCommentValid] = useState(false);
   const [commentInput, setCommentInput] = useState('');
 
-  const nextCommnetId = useRef(currentComments.length + 1);
+  const nextCommnetId = useRef(comments.length + 1);
 
   useEffect(() => {
-    setComments(currentComments);
-  }, [currentComments]);
+    setFeed(feedInfo);
+    setComments(feedInfo.comments);
+  }, [feedInfo]);
 
   const onCreateComment = () => {
     const commentText = commentInput.trim();
@@ -22,13 +27,13 @@ function Feed({ userNickName, currentComments }) {
       alert('댓글을 입력해주세요!');
       return;
     }
-    setComments([
+    comments([
       ...comments,
       {
-        nickName: userNickName,
+        nickName: currentUser,
         commentText: commentText,
         commentId: nextCommnetId.current,
-        heartActive: false,
+        isLiked: false,
       },
     ]);
     nextCommnetId.current += 1;
@@ -52,7 +57,7 @@ function Feed({ userNickName, currentComments }) {
   const onHeartClick = id => {
     setComments(
       comments.map(c =>
-        c.commentId === id ? { ...c, heartActive: !c.heartActive } : c
+        c.commentId === id ? { ...c, isLiked: !c.isLiked } : c
       )
     );
   };
@@ -60,12 +65,15 @@ function Feed({ userNickName, currentComments }) {
   const onDeleteComment = id => {
     setComments(comments.filter(c => c.commentId !== id));
   };
+  if (feed.length) {
+    return;
+  }
 
   return (
     <article className="feed wrapper">
-      <FeedHeader />
+      <FeedHeader user={feedUserInfo} />
       <div className="feed__img">
-        <img src="/images/sunghyunKim/fly.jpeg" alt="feed" />
+        <img src={`/images/sunghyunKim/${feedImg}`} alt="feed" />
       </div>
       <div className="feed__detail feed__padding">
         <FeedBtn />
@@ -75,26 +83,27 @@ function Feed({ userNickName, currentComments }) {
               src="/images/sunghyunKim/likedprofile.jpeg"
               alt="liked profile"
             />
-            <b>ria</b>님
+            <b>{whoLiked.likedUser}</b>님
           </div>
-          <b>&nbsp;외 10명</b>이 좋아합니다
+          <b>&nbsp;외 {whoLiked.howManyLiked}명</b>이 좋아합니다
         </div>
         <p className="feed__description">
-          <b>ria</b>오늘도 밤하늘은 이뻐!
+          <b>{feedUserInfo.name}</b>
+          {feedContent}
           <span className="more-detail">더보기</span>
         </p>
       </div>
       <div className="feed__comments feed__padding">
-        {comments.map((comment, i) => (
+        {comments.map(comment => (
           <Comment
             onHeartClick={onHeartClick}
             onDeleteComment={onDeleteComment}
             comment={comment}
-            key={i}
+            key={comment.commentId}
           />
         ))}
       </div>
-      <div className="time feed__padding">33분 전</div>
+      <div className="time feed__padding">{time} 전</div>
       <div className="feed__input feed__padding">
         <input
           id="commentInput"

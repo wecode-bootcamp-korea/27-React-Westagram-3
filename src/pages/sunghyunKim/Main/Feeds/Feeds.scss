@@ -5,9 +5,12 @@
   font-size: 11px;
 
   .feed {
+    margin: 20px 0;
     max-width: 614px;
     border-radius: 2px;
-
+    &:first-child {
+      margin-top: 0px;
+    }
     &__padding {
       padding: 0 16px;
     }

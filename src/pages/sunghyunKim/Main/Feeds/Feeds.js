@@ -2,21 +2,23 @@ import React, { useEffect, useState } from 'react';
 import Feed from './Feed/Feed';
 import './Feeds.scss';
 function Feeds() {
-  const [comments, setcomments] = useState([]);
+  const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/commentData.json')
+    fetch('http://localhost:3000/data/feedsData.json')
       .then(res => {
         return res.json();
       })
       .then(res => {
-        setcomments(res);
+        setFeeds(res);
       });
   }, []);
 
   return (
     <section className="feeds">
-      <Feed userNickName="ria" currentComments={comments} />
+      {feeds.map(feed => (
+        <Feed key={feed.feedId} feedInfo={feed} />
+      ))}
     </section>
   );
 }

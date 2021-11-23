@@ -174,11 +174,12 @@
         padding-left: 16px;
 
         li {
-          margin-left: 16px;
+          margin-bottom: 4px;
         }
 
         .fixedName {
           font-weight: bold;
+          margin-right: 5px;
         }
       }
 
@@ -205,136 +206,77 @@
           color: #0096f6;
           font-weight: 700;
         }
+      }
+    }
+  }
+}
 
-        .commentBtn:disabled {
-          color: rgb(192, 223, 253);
-        }
+/* MAIN RIGHT */
+.mainRight {
+  width: 293px;
+  border-radius: 3px;
+
+  .profileBoxAside {
+    padding: 0 4px 14px 0;
+    display: flex;
+    align-items: center;
+
+    .profileBoxAsideImg {
+      width: 56px;
+      border-radius: 100%;
+      margin-right: 16px;
+    }
+
+    div {
+    }
+    .profile {
+      .username {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      .text {
+        color: $second-font-color;
       }
     }
   }
 
-  /* MAIN RIGHT */
-  .mainRight {
-    width: 293px;
-    border-radius: 3px;
+  .storyBox {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 16px;
 
-    .profileBoxAside {
-      padding: 0 4px 14px 0;
+    .mainRightTitle {
       display: flex;
+      justify-content: space-between;
       align-items: center;
+      padding: 16px;
 
-      .profileBoxAsideImg {
-        width: 56px;
-        border-radius: 100%;
-        margin-right: 16px;
+      span {
+        color: $second-font-color;
       }
 
-      div {
+      button {
+        cursor: pointer;
+        border: none;
+        background-color: #fff;
       }
-      .profile {
-        .username {
-          font-weight: bold;
-          margin-right: 5px;
-        }
 
-        .text {
-          color: $second-font-color;
-        }
+      span,
+      button {
+        font-weight: 600;
       }
     }
 
-    .storyBox {
-      background-color: #fff;
-      border: 1px solid #dbdbdb;
-      margin-bottom: 16px;
-
-      .mainRightTitle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px;
-
-        span {
-          color: $second-font-color;
-        }
-
-        button {
-          cursor: pointer;
-          border: none;
-          background-color: #fff;
-        }
-
-        span,
-        button {
-          font-weight: 600;
-        }
-      }
-
-      .storyContents {
-        .profileBoxStory {
-          // @include flex-align-center;
-          display: flex;
-          align-items: center;
-          padding: 0 16px 8px 16px;
-          border-radius: 3px;
-
-          .StoryImg {
-            width: 32px;
-            height: 32px;
-            overflow: hidden;
-            object-fit: cover;
-            border-radius: 100%;
-            margin-right: 10px;
-          }
-
-          .username {
-            font-weight: bold;
-            margin-bottom: 1px;
-          }
-
-          .text {
-            color: $second-font-color;
-          }
-        }
-      }
-    }
-
-    /* MAINRIGHT RECOMMEND-BOX */
-
-    .recommendBox {
-      background-color: #fff;
-      border: 1px solid #dbdbdb;
-      padding-bottom: 8px;
-
-      .mainRightTitle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px;
-
-        span {
-          color: $second-font-color;
-        }
-
-        button {
-          cursor: pointer;
-          border: none;
-          background-color: #fff;
-        }
-
-        span,
-        button {
-          font-weight: 600;
-        }
-      }
-
-      .profileBoxRecommend {
+    .storyContents {
+      .profileBoxStory {
+        // @include flex-align-center;
         display: flex;
         align-items: center;
         padding: 0 16px 8px 16px;
-        position: relative;
+        border-radius: 3px;
 
-        .profileBoxRecoImg {
+        .StoryImg {
           width: 32px;
           height: 32px;
           overflow: hidden;
@@ -343,47 +285,102 @@
           margin-right: 10px;
         }
 
+        .username {
+          font-weight: bold;
+          margin-bottom: 1px;
+        }
+
         .text {
           color: $second-font-color;
         }
+      }
+    }
+  }
 
-        .username {
-          font-weight: bold;
-        }
+  /* MAINRIGHT RECOMMEND-BOX */
 
-        button {
-          position: absolute;
-          right: 16px;
-          color: #0096f6;
-          font-weight: 600;
-          cursor: pointer;
-          border: none;
-          background-color: #fff;
-        }
+  .recommendBox {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    padding-bottom: 8px;
+
+    .mainRightTitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+
+      span {
+        color: $second-font-color;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        background-color: #fff;
+      }
+
+      span,
+      button {
+        font-weight: 600;
       }
     }
 
-    /* CORP-AREA */
-    .corpArea {
-      color: #dbdbdb;
-      font-weight: 500;
-      font-size: 14px;
-      margin-top: 20px;
+    .profileBoxRecommend {
+      display: flex;
+      align-items: center;
+      padding: 0 16px 8px 16px;
+      position: relative;
 
-      ul {
-        margin-bottom: 20px;
+      .profileBoxRecoImg {
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
+        object-fit: cover;
+        border-radius: 100%;
+        margin-right: 10px;
+      }
 
-        li {
-          display: inline-block;
-        }
+      .text {
+        color: $second-font-color;
+      }
 
-        li::after {
-          content: ' ·';
-        }
+      .username {
+        font-weight: bold;
+      }
 
-        li:last-child::after {
-          display: none;
-        }
+      button {
+        position: absolute;
+        right: 16px;
+        color: #0096f6;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        background-color: #fff;
+      }
+    }
+  }
+
+  /* CORP-AREA */
+  .corpArea {
+    color: #dbdbdb;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 20px;
+
+    ul {
+      margin-bottom: 20px;
+
+      li {
+        display: inline-block;
+      }
+
+      li::after {
+        content: ' ·';
+      }
+
+      li:last-child::after {
+        display: none;
       }
     }
   }

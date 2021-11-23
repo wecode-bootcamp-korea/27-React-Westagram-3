@@ -95,7 +95,7 @@ function Nav({ setCurrentPopup, currentPopup }) {
   return (
     <nav className="nav">
       <div className="nav__wrapper">
-        <Link className="logo" to="/main-kim">
+        <Link className="logo" to="/main-won">
           <img src="/images/sunghyunKim/instagram.png" alt="logo" />
           <div className="logo__title">Westagram</div>
         </Link>

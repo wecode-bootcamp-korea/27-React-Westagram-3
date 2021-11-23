@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MainWon.scss';
 import Nav from '../../../components/Nav/Nav';
 
 function MainWon() {
+  const [댓글, 댓글변경] = useState('');
+  const [댓글들, 댓글들변경] = useState([]);
+
   return (
     <body className="main">
       <Nav />
@@ -52,16 +55,41 @@ function MainWon() {
               <span className="username">soyeonwon</span>
               <span className="contentsText">귀요미!!!</span>
             </section>
-            <ul className="commentList" />
+
+            <ul className="commentList">
+              {댓글들.map(function (글, i) {
+                return (
+                  <li key={i}>
+                    <span className="fixedName">dnjstd</span>
+                    <span>{글}</span>
+                  </li>
+                );
+              })}
+            </ul>
+
             <div className="commentTime">54분 전</div>
-            <form className="commentBox">
+
+            <div className="commentBox">
               <input
                 className="commentInput"
                 type="text"
                 placeholder="댓글 달기..."
+                onChange={e => {
+                  댓글변경(e.target.value);
+                }}
               />
-              <button className="commentBtn">게시</button>
-            </form>
+
+              <button
+                className="commentBtn"
+                onClick={() => {
+                  const arr = [...댓글들];
+                  arr.unshift(댓글);
+                  댓글들변경(arr);
+                }}
+              >
+                게시
+              </button>
+            </div>
           </article>
         </div>
         <div className="mainRight">

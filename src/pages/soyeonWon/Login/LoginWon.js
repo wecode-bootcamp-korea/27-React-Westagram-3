@@ -9,8 +9,8 @@ function LoginWon() {
     navigate('/main-won');
   };
 
-  let [inputId, setInputId] = useState('');
-  let [inputPw, setInputPw] = useState('');
+  const [inputId, setInputId] = useState('');
+  const [inputPw, setInputPw] = useState('');
 
   const handleIdInput = event => {
     setInputId(event.target.value);

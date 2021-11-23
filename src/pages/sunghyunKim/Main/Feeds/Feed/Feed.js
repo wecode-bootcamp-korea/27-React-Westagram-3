@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRef, useState } from 'react';
 import Comment from './Comment/Comment';
 import FeedBtn from './FeedBtn/FeedBtn';
@@ -10,16 +10,11 @@ function Feed({ feedInfo }) {
 
   const [feed, setFeed] = useState(feedInfo);
   const { feedUserInfo, feedImg, whoLiked, feedContent, time } = feed;
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState(feedInfo.comments);
   const [commentValid, setCommentValid] = useState(false);
   const [commentInput, setCommentInput] = useState('');
 
   const nextCommnetId = useRef(comments.length + 1);
-
-  useEffect(() => {
-    setFeed(feedInfo);
-    setComments(feedInfo.comments);
-  }, [feedInfo]);
 
   const onCreateComment = () => {
     const commentText = commentInput.trim();
@@ -27,7 +22,7 @@ function Feed({ feedInfo }) {
       alert('댓글을 입력해주세요!');
       return;
     }
-    comments([
+    setComments([
       ...comments,
       {
         nickName: currentUser,

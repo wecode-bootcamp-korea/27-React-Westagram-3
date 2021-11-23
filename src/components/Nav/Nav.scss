@@ -1,30 +1,5 @@
 @import '../../styles/common.scss';
 
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-$bg-gray: #fafafa;
-
-$border-light-gray: #ededed;
-
-$color-light-gray: #b1b1b1;
-$color-gray: #a2a2a2;
-$color-black: #343434;
-$color-light-blue: #c4e1fb;
-$color-blue: #39618b;
-
-$btn-blue--hover: #c4e1fb;
-$btn-blue: #5bb2ff;
-
-$white: #fff;
-
-$border-gray: $border-light-gray 1px solid;
-
-//  COMMON CSS
-
 * {
   box-sizing: border-box;
 }
@@ -47,7 +22,7 @@ b {
 }
 
 .nav {
-  @include flex-center;
+  @include flexCenter;
   position: fixed;
   top: 0;
   left: 0;
@@ -126,7 +101,7 @@ b {
 
   .search {
     position: relative;
-    @include flex-center;
+    @include flexCenter;
     width: 214px;
     padding: 3px;
     font-size: 14px;
@@ -224,7 +199,7 @@ b {
   }
 
   .nav-btn {
-    @include flex-center;
+    @include flexCenter;
     flex-direction: column;
     margin-right: 20px;
 
@@ -276,7 +251,7 @@ b {
         display: flex;
 
         i {
-          @include flex-center;
+          @include flexCenter;
           width: 16px;
           margin-right: 10px;
           font-size: 16px;

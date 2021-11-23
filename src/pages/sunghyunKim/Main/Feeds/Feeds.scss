@@ -23,7 +23,7 @@
     }
 
     &__profile {
-      @include flex-center;
+      @include flexCenter;
 
       &-info {
         display: flex;

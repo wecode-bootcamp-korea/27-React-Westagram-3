@@ -1,7 +1,7 @@
 @import '../../../../styles/common.scss';
 
 .nav {
-  @include flex-center;
+  @include flexCenter;
   position: fixed;
   top: 0;
   left: 0;
@@ -51,7 +51,7 @@
 
   .search {
     position: relative;
-    @include flex-center;
+    @include flexCenter;
     width: 214px;
     padding: 3px;
     font-size: 14px;
@@ -149,7 +149,7 @@
   }
 
   .nav-btn {
-    @include flex-center;
+    @include flexCenter;
     flex-direction: column;
     margin-right: 20px;
 
@@ -201,7 +201,7 @@
         display: flex;
 
         i {
-          @include flex-center;
+          @include flexCenter;
           width: 16px;
           margin-right: 10px;
           font-size: 16px;

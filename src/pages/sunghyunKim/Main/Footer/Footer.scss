@@ -1,8 +1,16 @@
 @import '../../../../styles/common.scss';
 
 .footer {
-  font-size: 13px;
-  color: $color-light-gray;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  a {
+    font-size: 13px;
+    color: $color-light-gray;
+    padding: 0 2px;
+  }
 
   & > * {
     margin-top: 10px;
@@ -13,5 +21,7 @@
   .copyright {
     display: block;
     margin-top: 10px;
+    font-size: 13px;
+    color: $color-light-gray;
   }
 }

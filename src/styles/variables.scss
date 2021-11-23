@@ -1,14 +1,17 @@
-@mixin flex-center {
+@mixin flex-center-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-@mixin flex-align-center {
+@mixin flex-enter {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+$basic-font-color: #262626;
+$second-font-color: #8e8e8e;
 
 @mixin flexHorCenter {
   display: flex;
@@ -19,10 +22,6 @@
   display: flex;
   align-items: center;
 }
-
-$basic-font-color: #262626;
-
-$second-font-color: #8e8e8e;
 
 $font-weight: bold;
 @mixin flexSpaceBetween {

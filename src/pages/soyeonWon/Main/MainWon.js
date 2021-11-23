@@ -6,9 +6,30 @@ function MainWon() {
   const [댓글, 댓글변경] = useState('');
   const [댓글들, 댓글들변경] = useState([]);
 
+  const [currentPopup, setCurrentPopup] = useState('');
+  const onBodyClick = e => {
+    !!currentPopup && setCurrentPopup('');
+  };
+
+  function putComment() {
+    if (댓글) {
+      const arr = [...댓글들];
+      arr.push(댓글);
+      댓글들변경(arr);
+      댓글변경('');
+    }
+  }
+
+  function enterKey() {
+    if (window.event.keyCode === 13) {
+      putComment();
+    }
+  }
+
   return (
-    <body className="main">
-      <Nav />
+    <body className="main" onClick={e => onBodyClick(e)}>
+      <Nav setCurrentPopup={setCurrentPopup} currentPopup={currentPopup} />
+
       <main class="mainWrapper">
         <div className="feeds">
           <article className="article">
@@ -74,19 +95,14 @@ function MainWon() {
                 className="commentInput"
                 type="text"
                 placeholder="댓글 달기..."
+                onKeyUp={enterKey}
+                value={댓글}
                 onChange={e => {
                   댓글변경(e.target.value);
                 }}
               />
 
-              <button
-                className="commentBtn"
-                onClick={() => {
-                  const arr = [...댓글들];
-                  arr.unshift(댓글);
-                  댓글들변경(arr);
-                }}
-              >
+              <button className="commentBtn" onClick={putComment}>
                 게시
               </button>
             </div>

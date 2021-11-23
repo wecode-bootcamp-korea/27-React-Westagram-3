@@ -8,12 +8,13 @@ import MainOh from './pages/eojineOh/Main/MainOh';
 import MainKim from './pages/sunghyunKim/Main/MainKim';
 import MainWon from './pages/soyeonWon/Main/MainWon';
 import MainLee from './pages/jihyunLee/Main/MainLee';
+import MainPath from './components/MainPath/MainPath';
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<MainKim />} /> */}
+        <Route path="/" element={<MainPath />} />
         <Route path="/login-oh" element={<LoginOh />} />
         <Route path="/login-kim" element={<LoginKim />} />
         <Route path="/login-won" element={<LoginWon />} />

@@ -60,6 +60,7 @@ function Feed({ feedInfo }) {
   const onDeleteComment = id => {
     setComments(comments.filter(c => c.commentId !== id));
   };
+
   if (feed.length) {
     return;
   }

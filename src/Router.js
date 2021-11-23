@@ -13,6 +13,7 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* <Route path="/" element={<MainKim />} /> */}
         <Route path="/login-oh" element={<LoginOh />} />
         <Route path="/login-kim" element={<LoginKim />} />
         <Route path="/login-won" element={<LoginWon />} />

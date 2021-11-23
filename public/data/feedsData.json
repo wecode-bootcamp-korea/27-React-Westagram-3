@@ -1,0 +1,104 @@
+[
+  {
+    "feedId": 1,
+    "time": "5분",
+    "feedUserInfo": {
+      "img": "/maria3.jpeg",
+      "name": "ria",
+      "nickName": "picnic"
+    },
+    "feedImg": "fly.jpeg",
+    "whoLiked": { "likedUser": "ria", "howManyLiked": 10 },
+    "feedContent": "오늘도 밤하늘은 이뻐!",
+    "comments": [
+      {
+        "commentId": 1,
+        "nickName": "tjdgus05",
+        "commentText": "이쁘다~~",
+        "isLiked": true
+      },
+      {
+        "commentId": 2,
+        "nickName": "wecode",
+        "commentText": "Hi there.",
+        "isLiked": true
+      },
+      {
+        "commentId": 3,
+        "nickName": "peter",
+        "commentText": "Looks good!",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "feedId": 2,
+    "time": "1시간",
+    "feedUserInfo": {
+      "img": "/p2.jpeg",
+      "name": "eroworld",
+      "nickName": "picnic"
+    },
+    "feedImg": "search2.jpg",
+    "whoLiked": { "likedUser": "hellowecode", "howManyLiked": 102 },
+    "feedContent": "노을 맛집!",
+    "comments": [
+      {
+        "commentId": 1,
+        "nickName": "world",
+        "commentText": "sky hight~~",
+        "isLiked": true
+      },
+      {
+        "commentId": 2,
+        "nickName": "yello_orange",
+        "commentText": "How are you doing?",
+        "isLiked": false
+      },
+      {
+        "commentId": 3,
+        "nickName": "wide_road",
+        "commentText": "Let's have coffee one day!",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "feedId": 3,
+    "time": "33분",
+    "feedUserInfo": {
+      "img": "/p5.jpeg",
+      "name": "painting_the_world",
+      "nickName": "oil paint"
+    },
+    "feedImg": "cake1.jpeg",
+    "whoLiked": { "likedUser": "happyDay", "howManyLiked": 1021 },
+    "feedContent": "Happy Birthday :)",
+    "comments": [
+      {
+        "commentId": 1,
+        "nickName": "world",
+        "commentText": "Thanks!!",
+        "isLiked": true
+      },
+      {
+        "commentId": 2,
+        "nickName": "ms_dear",
+        "commentText": "See you soon~~~",
+        "isLiked": false
+      },
+      {
+        "commentId": 3,
+        "nickName": "ht_the_road",
+        "commentText": "Are you on the way?",
+        "isLiked": true
+      },
+      {
+        "commentId": 4,
+        "nickName": "hthihi",
+        "commentText": "Hi!!!",
+        "isLiked": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+@import '../../../../styles/common.scss';
+
+.footer {
+  font-size: 13px;
+  color: $color-light-gray;
+
+  & > * {
+    margin-top: 10px;
+    padding: 3px;
+    line-height: 1.3em;
+  }
+
+  .copyright {
+    display: block;
+    margin-top: 10px;
+  }
+}

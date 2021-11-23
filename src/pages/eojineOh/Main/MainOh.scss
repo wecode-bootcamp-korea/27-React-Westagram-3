@@ -2,7 +2,7 @@
 
 
 .main {
-  background-color: $color_background;
+  background-color: $bg-gray;
 }
 
 button {
@@ -38,7 +38,8 @@ main {
         padding: $padding_small;
 
         .imageAndId {
-          @include flexStart();
+          display: flex;
+          justify-content: flex-start;
 
           .profileImage {
             width: 32px;
@@ -50,7 +51,7 @@ main {
             margin: auto 0;
             margin-left: 15px;
             padding: 2px;
-            @include font_strong();
+            font-weight: 600;
           }
         }
 
@@ -82,7 +83,8 @@ main {
 
         .iconsLeft img {
           box-sizing: content-box;
-          @include widthHeight_24();
+          width: 24px;
+          height: 24px;
           padding: 8px;
         }
 
@@ -92,14 +94,16 @@ main {
 
         .iconsRight {
           box-sizing: content-box;
-          @include widthHeight_24();
+          width: 24px;
+          height: 24px;
           padding: 8px;
         }
       }
     }
 
     .feedLike {
-      @include flexStart();
+      display: flex;
+      justify-content: flex-start;
       align-items: center;
       height: 18px;
       margin-bottom: 8px;
@@ -108,7 +112,7 @@ main {
       .profileImage {
         width: 20px;
         height: 20px;
-        border: 1px solid $color_light_gray;
+        border: $border-gray;
         border-radius: 50%;
       }
 
@@ -118,7 +122,7 @@ main {
         font-size: 14px;
 
         span {
-          @include font_strong();
+          font-weight: 600;
         }
       }
     }
@@ -126,14 +130,15 @@ main {
     /* feedText styling */
     .feedText {
       padding: 0px 16px;
-      @include flexStart();
+      display: flex;
+      justify-content: flex-start;
       align-items: center;
       margin-bottom: 5px;
 
       .profileId {
         margin-right: 10px;
         font-size: 16px;
-        @include font_strong();
+        font-weight: 600;
       }
 
       .feedDescription {
@@ -156,13 +161,14 @@ main {
         padding: 0px 16px;
 
         .replyItSelf {
-          @include flexStart();
+          display: flex;
+          justify-content: flex-start;
           align-items: center;
 
           .shownReplyId {
             margin-right: 10px;
             font-size: 14px;
-            @include font_strong();
+            font-weight: 600;
           }
 
           .shownReplyText {
@@ -220,7 +226,8 @@ main {
     width: 293px;
 
     .rightMyProfile {
-      @include flexStart();
+      display: flex;
+      justify-content: flex-start;
       height: 56px;
 
       .image {
@@ -240,7 +247,7 @@ main {
         }
 
         .profileId {
-          @include font_strong();
+          font-weight: 600;
         }
 
         .profileText {
@@ -251,7 +258,7 @@ main {
 
     .upper {
       @include flexSpaceBetween();
-      @include font_strong();
+      font-weight: 600;
       align-items: center;
       height: 32px;
       padding: 0 10px;
@@ -274,12 +281,18 @@ main {
 
     .rightStory {
       height: 200px;
-      @include main_right_both();
+      margin-top: 15px;
+      border: 1px solid lightgrey;
+      background-color: white;
+      overflow-y: auto;
     }
 
     .recommend {
       height: 175px;
-      @include main_right_both();
+      margin-top: 15px;
+      border: 1px solid lightgrey;
+      background-color: white;
+      overflow-y: auto;
     }
 
     .rightInfo {
@@ -297,7 +310,8 @@ main {
   margin: 0 10px;
 
   .othersProfile {
-    @include flexStart();
+    display: flex;
+    justify-content: flex-start;
     position: relative;
     height: 48px;
     padding: 8px 0px;
@@ -313,8 +327,7 @@ main {
       align-self: center;
       margin: auto 0px;
       padding-left: 10px;
-
-      @include font_strong();
+      font-weight: 600;
 
       .profileId {
         height: 17px;
@@ -335,7 +348,7 @@ main {
       right: 0px;
       top: 16px;
       color: #0095f6;
-      @include font_strong();
+      font-weight: 600;
       line-height: 16px;
       font-size: 12px;
     }

@@ -2,14 +2,12 @@
 
 
 .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
 
   .loginWrapper {
     width: 360px;
     height: 400px;
-    border: 1px solid #e6e6e6;
+    border: $border-gray;
     margin-top: 100px;
 
     .logoWrapper {
@@ -25,8 +23,8 @@
     }
 
     .input {
-      width: 100%;
       @include flexVerCenter();
+      width: 100%;
       flex-flow: column;
       margin-top: 24px;
 
@@ -37,7 +35,7 @@
       }
 
       input {
-        background-color: $color_background;
+        background-color: $bg-gray;
         border: 1px solid #f3f3f3;
         border-radius: 5px;
         padding-left: 10px;

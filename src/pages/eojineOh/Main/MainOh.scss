@@ -154,21 +154,21 @@ main {
         @include flexSpaceBetween();
         margin-bottom: 5px;
         padding: 0px 16px;
-      }
 
-      .replyItSelf {
-        @include flexStart();
-        align-items: center;
+        .replyItSelf {
+          @include flexStart();
+          align-items: center;
 
-        .shownReplyId {
-          margin-right: 10px;
-          font-size: 14px;
-          @include font_strong();
-        }
+          .shownReplyId {
+            margin-right: 10px;
+            font-size: 14px;
+            @include font_strong();
+          }
 
-        .shownReplyText {
-          font-size: 14px;
-          font-weight: 400;
+          .shownReplyText {
+            font-size: 14px;
+            font-weight: 400;
+          }
         }
 
         img {
@@ -177,6 +177,8 @@ main {
           height: 14px;
         }
       }
+
+
     }
 
     /* hoursAgo styling */

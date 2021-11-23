@@ -5,7 +5,6 @@
   color: $basic-font-color;
   font-size: 14px;
 
-  /* NAV */
   .header {
     position: fixed;
     display: flex;
@@ -154,7 +153,6 @@
         }
       }
 
-      /* FEEDS CONTENTS */
       .contentsBox {
         padding-bottom: 6px;
 
@@ -172,15 +170,6 @@
       .commentList {
         padding-right: 16px;
         padding-left: 16px;
-
-        li {
-          margin-bottom: 4px;
-        }
-
-        .fixedName {
-          font-weight: bold;
-          margin-right: 5px;
-        }
       }
 
       .commentTime {
@@ -189,7 +178,6 @@
         color: $second-font-color;
       }
 
-      /* FEEDS COMMENTS */
       .commentBox {
         border-top: 1px solid #dbdbdb;
         height: 53px;
@@ -213,7 +201,6 @@
   }
 }
 
-/* MAIN RIGHT */
 .mainRight {
   width: 293px;
   border-radius: 3px;
@@ -298,8 +285,6 @@
     }
   }
 
-  /* MAINRIGHT RECOMMEND-BOX */
-
   .recommendBox {
     background-color: #fff;
     border: 1px solid #dbdbdb;
@@ -362,7 +347,6 @@
     }
   }
 
-  /* CORP-AREA */
   .corpArea {
     color: #dbdbdb;
     font-weight: 500;

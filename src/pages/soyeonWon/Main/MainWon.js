@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './MainWon.scss';
 import Nav from '../../../components/Nav/Nav';
+import Comment from '../../../components/Comment/Comment';
 
 function MainWon() {
-  const [댓글, 댓글변경] = useState('');
-  const [댓글들, 댓글들변경] = useState([]);
+  const [inputComment, setInputComment] = useState('');
+  const [commentList, setCommentList] = useState([]);
 
   const [currentPopup, setCurrentPopup] = useState('');
   const onBodyClick = e => {
@@ -12,11 +13,11 @@ function MainWon() {
   };
 
   function putComment() {
-    if (댓글) {
-      const arr = [...댓글들];
-      arr.push(댓글);
-      댓글들변경(arr);
-      댓글변경('');
+    if (inputComment) {
+      const arr = [...commentList];
+      arr.push(inputComment);
+      setCommentList(arr);
+      setInputComment('');
     }
   }
 
@@ -69,7 +70,7 @@ function MainWon() {
               />
               <span>wecode_bootcamp</span>
               <span>님&nbsp;</span>
-              <span>외 4명</span>
+              <span>외 22명</span>
               <span>이 좋아합니다</span>
             </section>
             <section className="contentsBox">
@@ -78,13 +79,8 @@ function MainWon() {
             </section>
 
             <ul className="commentList">
-              {댓글들.map(function (글, i) {
-                return (
-                  <li key={i}>
-                    <span className="fixedName">dnjstd</span>
-                    <span>{글}</span>
-                  </li>
-                );
+              {commentList.map((comment, i) => {
+                return <Comment comment={comment} key={i} />;
               })}
             </ul>
 
@@ -96,9 +92,9 @@ function MainWon() {
                 type="text"
                 placeholder="댓글 달기..."
                 onKeyUp={enterKey}
-                value={댓글}
+                value={inputComment}
                 onChange={e => {
-                  댓글변경(e.target.value);
+                  setInputComment(e.target.value);
                 }}
               />
 

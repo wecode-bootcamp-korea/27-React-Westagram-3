@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
+import Comment from '../../../components/Comment/Comment';
 import './MainOh.scss';
 
 function Main() {
   const [commentInput, setCommentInput] = useState(''); // comment input state 생성.
   const [comments, setComments] = useState([]); // feed에 들어갈 comment들 관련 state 생성.
-  const [isLiked, setIsLiked] = useState(false); // 댓글에 isLiked 관련 state 생성.
 
   function putComment() {
     if (commentInput) {
@@ -24,13 +24,14 @@ function Main() {
     }
   }
 
-  const toggleIsLiked = () => {
-    setIsLiked(!isLiked); // isLiked에 들어간 booelan 값을 계속해서 toggle
+  const [currentPopup, setCurrentPopup] = useState('');
+  const onBodyClick = e => {
+    !!currentPopup && setCurrentPopup('');
   };
 
   return (
-    <div className="main">
-      <Nav />
+    <div className="main" onClick={e => onBodyClick(e)}>
+      <Nav setCurrentPopup={setCurrentPopup} currentPopup={currentPopup} />
       <main>
         <div className="feeds">
           <article>
@@ -82,25 +83,13 @@ function Main() {
                 <button className="showMoreBtn">더 보기</button>
               </div>
               <div className="reply">
-                {comments.map(commentText => {
+                {comments.map((commentText, index) => {
                   return (
-                    // eslint-disable-next-line
-                    <div className="replyChunk">
-                      <div className="replyItSelf">
-                        <span className="shownReplyId">wecodebootcamp</span>
-                        <span className="shownReplyText">{commentText}</span>
-                      </div>
-                      <img
-                        className="imgHeartIcon"
-                        src={
-                          !isLiked
-                            ? '/images/eojineOh/heart.png'
-                            : '/images/eojineOh/redheart.png'
-                        }
-                        alt="Hearticon"
-                        onClick={toggleIsLiked}
-                      />
-                    </div>
+                    <Comment
+                      key={index}
+                      userName="wecodebootcamp"
+                      commentText={commentText}
+                    />
                   );
                 })}
               </div>

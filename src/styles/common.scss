@@ -1,17 +1,11 @@
 @import './variables.scss';
 
-// Mixin
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 //  COMMON CSS
 
 * {
   box-sizing: border-box;
 }
+
 a {
   color: black;
   text-decoration: none;

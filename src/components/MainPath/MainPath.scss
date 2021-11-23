@@ -1,0 +1,43 @@
+@import '../../styles/common.scss';
+
+.main-path {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section:first-child {
+    margin-right: 60px;
+  }
+
+  h1 {
+    display: block;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #a49393;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 50px;
+  }
+
+  button {
+    margin: 10px;
+    width: 150px;
+    height: 70px;
+    background-color: #eed6d3;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

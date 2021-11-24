@@ -7,6 +7,24 @@ function MainLee() {
   const onBodyClick = e => {
     !!currentPopup && setCurrentPopup('');
   };
+
+  const [toDo, setToDo] = useState('');
+  const [toDos, setToDos] = useState([]);
+
+  function onChangeInput(e) {
+    setToDo(e.target.value);
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    if (toDo === '') {
+      return; // return 을 만나면 종료
+    }
+    setToDos(currentArray => [...currentArray, toDo]);
+    setToDo('');
+    // console.log(toDos);   // 왜 처음엔 빈 array가 출력될까?
+  }
+
   return (
     <div className="realMain" onClick={e => onBodyClick(e)}>
       <Nav setCurrentPopup={setCurrentPopup} currentPopup={currentPopup} />
@@ -54,12 +72,23 @@ function MainLee() {
                     <span className="font-bold">dfgj_cgggg</span> 너무 귀엽다...
                     <i className="fas fa-heart" />
                   </li>
+                  {toDos.map((item, index) => (
+                    <li key={index}>
+                      <span className="font-bold">jihyun219 </span>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               <div className="feed-comment">
-                <form>
-                  <input type="text" placeholder="댓글 달기... " />
+                <form onSubmit={onSubmit}>
+                  <input
+                    value={toDo}
+                    onChange={onChangeInput}
+                    type="text"
+                    placeholder="댓글 달기... "
+                  />
                   <button className="post-comment">게시</button>
                 </form>
               </div>

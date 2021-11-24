@@ -76,6 +76,7 @@ function MainLee() {
                     <li key={index}>
                       <span className="font-bold">jihyun219 </span>
                       {item}
+                      <i className="fas fa-heart" />
                     </li>
                   ))}
                 </ul>

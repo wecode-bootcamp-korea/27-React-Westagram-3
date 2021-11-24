@@ -6,7 +6,23 @@ function Login() {
   // 로그인 버튼 누르면 /main-oh 페이지로 이동.
   const navigate = useNavigate();
   const goToMain = () => {
-    navigate('/main-oh');
+    fetch('RequestURL()', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: inputId,
+        password: inputPwd,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        if ('token' in result) {
+          navigate('/main-oh');
+          // eslint-disable-next-line
+          console.log('결과 : ', result);
+        } else {
+          alert('WRONG !');
+        }
+      });
   };
 
   // Mission 1 : ID와 Pwd input의 값에 변화가 생기면 그 값이 state로 저장.

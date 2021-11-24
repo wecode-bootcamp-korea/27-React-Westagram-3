@@ -8,8 +8,8 @@ import './Feed.scss';
 function Feed({ feedInfo }) {
   const currentUser = 'ria';
 
-  const [feed, setFeed] = useState(feedInfo);
-  const { feedUserInfo, feedImg, whoLiked, feedContent, time } = feed;
+  // const [feed, setFeed] = useState(feedInfo);
+  const { feedUserInfo, feedImg, whoLiked, feedContent, time } = feedInfo;
   const [comments, setComments] = useState(feedInfo.comments);
   const [commentValid, setCommentValid] = useState(false);
   const [commentInput, setCommentInput] = useState('');
@@ -61,7 +61,7 @@ function Feed({ feedInfo }) {
     setComments(comments.filter(c => c.commentId !== id));
   };
 
-  if (feed.length) {
+  if (feedInfo.length) {
     return;
   }
 

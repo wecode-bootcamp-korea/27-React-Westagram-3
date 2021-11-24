@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function LoginKim() {
   const [form, setForm] = useState({ email: '', password: '' });
   const { email, password } = form;
-  const [token, setToken] = useState('');
+  // const [token, setToken] = useState('');
 
   const handleInput = e => {
     const { name, value } = e.target;
@@ -17,31 +17,34 @@ function LoginKim() {
   const navigate = useNavigate();
 
   function handleLogin() {
-    fetch('http://10.58.5.37:8000/users/signin', {
-      method: 'POST',
-      body: JSON.stringify(form),
-    })
-      .then(res => {
-        const { status } = res;
-        if (status === 401) {
-          alert('비밀번호를 확인해주세요!');
-        }
-        if (status === 404) {
-          alert('등록된 사용자가 아닙니다.');
-        }
-        if (status === 201) {
-          alert('회원가입 되셨습니다! 축하드립니다!');
-        }
-        return res.json();
-      })
-      .then(res => {
-        if (!!res.token) {
-          setToken(token);
-          alert(`로그인 되었습니다.\n${email}님 좋은 하루되세요 :)`);
-          navigate('/main-kim');
-        }
-      })
-      .catch(e => console.log(e));
+    alert(`로그인 되었습니다.\n${email}님 좋은 하루되세요 :)`);
+    navigate('/main-kim');
+
+    // fetch('http://10.58.5.37:8000/users/signin', {
+    //   method: 'POST',
+    //   body: JSON.stringify(form),
+    // })
+    //   .then(res => {
+    //     const { status } = res;
+    //     if (status === 401) {
+    //       alert('비밀번호를 확인해주세요!');
+    //     }
+    //     if (status === 404) {
+    //       alert('등록된 사용자가 아닙니다.');
+    //     }
+    //     if (status === 201) {
+    //       alert('회원가입 되셨습니다! 축하드립니다!');
+    //     }
+    //     return res.json();
+    //   })
+    //   .then(res => {
+    //     if (!!res.token) {
+    //       setToken(token);
+    //       alert(`로그인 되었습니다.\n${email}님 좋은 하루되세요 :)`);
+    //       navigate('/main-kim');
+    //     }
+    //   })
+    //   .catch(e => console.log(e));
   }
   function onKeyup(e) {
     e.key === 'Enter' && handleLogin();

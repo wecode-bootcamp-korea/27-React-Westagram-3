@@ -9,7 +9,7 @@ function Footer() {
           const { id, content } = info;
           return (
             <li key={id}>
-              <a href="#">{content}</a>
+              <span>{content}</span>
             </li>
           );
         })}

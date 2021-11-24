@@ -5,8 +5,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function LoginKim() {
-  const [form, setForm] = useState({ id: '', password: '' });
-  const { id, password } = form;
+  const [form, setForm] = useState({ email: '', password: '' });
+  const { email, password } = form;
+  const [token, setToken] = useState('');
 
   const handleInput = e => {
     const { name, value } = e.target;
@@ -15,12 +16,35 @@ function LoginKim() {
 
   const navigate = useNavigate();
 
-  function onBtnClick() {
-    navigate('/main-kim');
-    alert(`로그인 되었습니다.\n${id}님 좋은 하루되세요 :)`);
+  function handleLogin() {
+    fetch('http://10.58.5.37:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify(form),
+    })
+      .then(res => {
+        const { status } = res;
+        if (status === 401) {
+          alert('비밀번호를 확인해주세요!');
+        }
+        if (status === 404) {
+          alert('등록된 사용자가 아닙니다.');
+        }
+        if (status === 201) {
+          alert('회원가입 되셨습니다! 축하드립니다!');
+        }
+        return res.json();
+      })
+      .then(res => {
+        if (!!res.token) {
+          setToken(token);
+          alert(`로그인 되었습니다.\n${email}님 좋은 하루되세요 :)`);
+          navigate('/main-kim');
+        }
+      })
+      .catch(e => console.log(e));
   }
   function onKeyup(e) {
-    e.key === 'Enter' && onBtnClick();
+    e.key === 'Enter' && handleLogin();
   }
 
   return (
@@ -32,8 +56,8 @@ function LoginKim() {
             <label>
               <input
                 className="input id"
-                type="text"
-                name="id"
+                type="email"
+                name="email"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 onChange={handleInput}
                 onKeyUp={onKeyup}
@@ -55,12 +79,14 @@ function LoginKim() {
           </form>
           <button
             className={`loginBtn ${
-              id.includes('@') && password.length >= 5
+              email.includes('@') && password.length >= 5
                 ? ''
                 : 'loginBtn--disable'
             }`}
-            onClick={onBtnClick}
-            style={{ disabled: !id.includes('@') || !(password.length >= 5) }}
+            onClick={handleLogin}
+            style={{
+              disabled: !email.includes('@') || !(password.length >= 5),
+            }}
           >
             로그인
           </button>

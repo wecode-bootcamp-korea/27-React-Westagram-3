@@ -1,23 +1,21 @@
+@import '../../../styles/variables.scss';
+
 * {
   margin: 0;
   padding: 0;
 }
 
 .login_background {
+  @include flexCenter;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .container {
+  @include flexCenter;
   width: 500px;
   height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #bbb9b9;
   margin: 0 auto;
+  border: 1px solid #bbb9b9;
 }
 
 .login-container {
@@ -26,16 +24,16 @@
 
   h1 {
     width: 100%;
-    text-align: center;
     margin-bottom: 55px;
     font-size: 65px;
     font-family: 'Lobster', cursive;
+    text-align: center;
   }
 
   p {
     margin-top: 250px;
+    color: $color-blue;
     text-align: center;
-    color: #2f356b;
   }
 }
 
@@ -46,32 +44,31 @@
     width: 100%;
     height: 45px;
     margin-bottom: 6px;
-    background-color: #fafafa;
     padding: 5px 10px;
-    box-sizing: border-box;
-    font-size: 15px;
+    background-color: #fafafa;
     border: 1px solid #bbb9b9;
     border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
   }
 
   button {
     width: 100%;
-    margin-top: 10px;
-    width: 100%;
     height: 40px;
-    background-color: #b2dffc;
+    margin-top: 10px;
     color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
     font-weight: bold;
     font-size: 15px;
-    border-radius: 5px;
-    border: none;
-  }
 
-  .activeBtn {
-    background-color: blue;
-  }
+    &:hover {
+      cursor: pointer;
+    }
 
-  .unActiveBtn {
-    background-color: #b2dffc;
+    &:disabled {
+      background-color: $color-light-blue;
+    }
   }
 }

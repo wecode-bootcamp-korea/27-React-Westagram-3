@@ -63,7 +63,8 @@ function LoginLee() {
             />
             <button
               onClick={onClickBtn}
-              className={'login-btn ' + (isValid ? 'activeBtn' : 'unActiveBtn')}
+              className="login-btn"
+              disabled={isValid ? false : true}
             >
               로그인
             </button>

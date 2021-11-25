@@ -1,0 +1,12 @@
+@import 'src/styles/variables.scss';
+
+.commentList {
+  li {
+    margin-bottom: 4px;
+  }
+
+  .fixedName {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+}

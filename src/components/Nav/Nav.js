@@ -95,7 +95,7 @@ function Nav({ setCurrentPopup, currentPopup }) {
   return (
     <nav className="nav">
       <div className="nav__wrapper">
-        <Link className="logo" to="/main-kim">
+        <Link className="logo" to="/main-won">
           <img src="/images/sunghyunKim/instagram.png" alt="logo" />
           <div className="logo__title">Westagram</div>
         </Link>
@@ -168,7 +168,7 @@ function Nav({ setCurrentPopup, currentPopup }) {
             className="nav-btn__profile nav-btn"
             onClick={e => onNavProfileClick(e)}
           >
-            <img src="/images/sunghyunKim/maria3.jpeg" alt="profile" />
+            <img src="/images/sunghyunKim/kk.jpg" alt="profile" />
             <div className="nav-btn__more nav-btn__more--none" />
             <div
               className="profile-dropdown"

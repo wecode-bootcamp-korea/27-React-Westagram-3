@@ -1,19 +1,19 @@
 @import 'src/styles/variables.scss';
 
 .main {
-  background-color: #fafafa;
-  color: $basic-font-color;
+  background-color: $color_background;
+  color: $color-black;
   font-size: 14px;
 
   .header {
     position: fixed;
     display: flex;
+    align-items: center;
     justify-content: space-around;
     width: 100%;
     height: 53px;
     border-bottom: 1px solid #dbdbdb;
-    background-color: #fff;
-    align-items: center;
+    background-color: $white;
     padding: 0 80px;
 
     .logo {
@@ -48,7 +48,7 @@
       input {
         border: 1px solid #dbdbdb;
         border-radius: 3px;
-        background-color: #fafafa;
+        background-color: $color_background;
         text-align: center;
         width: 215px;
         height: 28px;
@@ -79,7 +79,7 @@
     justify-content: space-between;
 
     .feeds {
-      background-color: #fff;
+      background-color: $white;
       border-radius: 3px;
 
       .article {
@@ -175,7 +175,7 @@
       .commentTime {
         padding: 5px 16px 10px 16px;
         font-weight: bold;
-        color: $second-font-color;
+        color: $color-gray;
       }
 
       .commentBox {
@@ -192,7 +192,7 @@
         }
 
         .commentBtn {
-          background-color: #fff;
+          background-color: $white;
           color: #0096f6;
           font-weight: 700;
         }
@@ -217,21 +217,21 @@
     }
 
     div {
-    }
-    .profile {
-      .username {
-        font-weight: bold;
-        margin-right: 5px;
-      }
+      .profile {
+        .username {
+          font-weight: bold;
+          margin-right: 5px;
+        }
 
-      .text {
-        color: $second-font-color;
+        .text {
+          color: $color-gray;
+        }
       }
     }
   }
 
   .storyBox {
-    background-color: #fff;
+    background-color: $white;
     border: 1px solid #dbdbdb;
     margin-bottom: 16px;
 
@@ -242,13 +242,13 @@
       padding: 16px;
 
       span {
-        color: $second-font-color;
+        color: $color-gray;
       }
 
       button {
         cursor: pointer;
         border: none;
-        background-color: #fff;
+        background-color: $white;
       }
 
       span,
@@ -279,14 +279,14 @@
         }
 
         .text {
-          color: $second-font-color;
+          color: $color-gray;
         }
       }
     }
   }
 
   .recommendBox {
-    background-color: #fff;
+    background-color: $white;
     border: 1px solid #dbdbdb;
     padding-bottom: 8px;
 
@@ -297,13 +297,13 @@
       padding: 16px;
 
       span {
-        color: $second-font-color;
+        color: $color-gray;
       }
 
       button {
         cursor: pointer;
         border: none;
-        background-color: #fff;
+        background-color: $white;
       }
 
       span,
@@ -328,7 +328,7 @@
       }
 
       .text {
-        color: $second-font-color;
+        color: $color-gray;
       }
 
       .username {
@@ -342,7 +342,7 @@
         font-weight: 600;
         cursor: pointer;
         border: none;
-        background-color: #fff;
+        background-color: $white;
       }
     }
   }

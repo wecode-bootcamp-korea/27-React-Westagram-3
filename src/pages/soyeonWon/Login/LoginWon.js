@@ -5,10 +5,6 @@ import './LoginWon.scss';
 function LoginWon() {
   const navigate = useNavigate();
 
-  const goToMain = () => {
-    navigate('/main-won');
-  };
-
   const [inputId, setInputId] = useState('');
   const [inputPw, setInputPw] = useState('');
 
@@ -18,6 +14,18 @@ function LoginWon() {
 
   const handlePwInput = event => {
     setInputPw(event.target.value);
+  };
+
+  const handleLogin = () => {
+    fetch('http://10.58.3.74:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: inputId,
+        password: inputPw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => (result.token ? navigate('/main-won') : null));
   };
 
   return (
@@ -47,11 +55,19 @@ function LoginWon() {
 
             <div>
               {inputId.includes('@') && inputPw.length >= 5 ? (
-                <button className="button" onClick={goToMain} disabled={false}>
+                <button
+                  className="button"
+                  disabled={false}
+                  onClick={handleLogin}
+                >
                   로그인
                 </button>
               ) : (
-                <button className="button" onClick={goToMain} disabled={true}>
+                <button
+                  className="button"
+                  disabled={true}
+                  onClick={handleLogin}
+                >
                   로그인
                 </button>
               )}

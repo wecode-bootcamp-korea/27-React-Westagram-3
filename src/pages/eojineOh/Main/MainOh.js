@@ -1,34 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../../../components/Nav/Nav';
-import Comment from '../../../components/Comment/Comment';
+import Comment from '../Comment/Comment';
 import { STORY_DATA } from './storyData';
 import { RECOMMEND_DATA } from './recommendData';
 import { RIGHTFOOTER_DATA } from './rightFooterData';
 import './MainOh.scss';
 
 function Main() {
+  const [currentPopup, setCurrentPopup] = useState('');
   const [commentInput, setCommentInput] = useState(''); // comment input state 생성.
   const [comments, setComments] = useState([]); // feed에 들어갈 comment들 관련 state 생성.
 
-  function putComment() {
+  function addComment() {
     if (commentInput) {
       // commentInput state가 값이 있으면(truthy이라면)
-      const arr = [...comments]; // 임시 배열 arr에 comment들 불러오고
-      arr.push(commentInput); // commentInput에 들어간 값을 arr 배열 안에 넣고
-      setComments(arr); // 변경된 arr 배열을 feed에 들어갈 comments 배열로 변경하고
+      setComments([...comments, commentInput]); // 스프레드 연산자를 통해 comments 배열을 불러온 후 commentInput에 들어간 값을 다음 배열 요소로 넣고
       setCommentInput(''); // commentInput state를 빈 문자열로 변경.
     }
   }
 
-  function enterkey() {
+  function handleEnterKey() {
     if (window.event.keyCode === 13) {
       // 발생한 이벤트의 키코드가 13일 때(인터키일 때)
-      putComment(); // putComment 함수 실행
+      addComment(); // putComment 함수 실행
     }
   }
 
-  const [currentPopup, setCurrentPopup] = useState('');
   const onBodyClick = e => {
     !!currentPopup && setCurrentPopup('');
   };
@@ -109,9 +107,9 @@ function Main() {
                   setCommentInput(value);
                 }}
                 value={commentInput}
-                onKeyUp={enterkey}
+                onKeyUp={handleEnterKey}
               />
-              <button className="replyBtn" onClick={putComment}>
+              <button className="replyBtn" onClick={addComment}>
                 게시
               </button>
             </div>

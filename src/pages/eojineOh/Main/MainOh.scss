@@ -27,11 +27,6 @@
   background-color: $bg-gray;
 }
 
-button {
-  border: none;
-  background-color: transparent;
-}
-
 /* main styling */
 main {
   position: relative;
@@ -73,7 +68,7 @@ main {
           }
         }
 
-        i {
+        .fas {
           font-size: 15px;
         }
       }
@@ -188,7 +183,7 @@ main {
           }
         }
 
-        img {
+        .imgHeartIcon {
           box-sizing: content-box;
           width: 14px;
           height: 14px;
@@ -278,15 +273,23 @@ main {
       z-index: 1;
       border-bottom: $border-gray;
 
-      button {
-        font-size: 12px;
-        color: #262626;
-      }
-
       .title {
         font-size: 14px;
         color: #8e8e8e;
       }
+
+      .showAll {
+        font-size: 12px;
+        color: #262626;
+        border: none;
+        background-color: transparent;
+      }
+
+      .showMore {
+        border: none;
+        background-color: transparent;
+      }
+
     }
 
     .rightStory {
@@ -331,7 +334,7 @@ main {
     height: 48px;
     padding: 8px 0px;
 
-    img {
+    .image {
       align-self: center;
       width: 32px;
       height: 32px;
@@ -358,7 +361,7 @@ main {
       }
     }
 
-    button {
+    .followOther {
       position: absolute;
       right: 0px;
       top: 16px;
@@ -366,6 +369,8 @@ main {
       @include fontWeightStrong();
       line-height: 16px;
       font-size: 12px;
+      border: none;
+      background-color: transparent;
     }
   }
 }

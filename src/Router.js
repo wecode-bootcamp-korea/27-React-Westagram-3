@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainPath from './components/MainPath/MainPath';
 import LoginOh from './pages/eojineOh/Login/LoginOh';
 import LoginKim from './pages/sunghyunKim/Login/LoginKim';
 import LoginWon from './pages/soyeonWon/Login/LoginWon';
@@ -8,7 +9,6 @@ import MainOh from './pages/eojineOh/Main/MainOh';
 import MainKim from './pages/sunghyunKim/Main/MainKim';
 import MainWon from './pages/soyeonWon/Main/MainWon';
 import MainLee from './pages/jihyunLee/Main/MainLee';
-import MainPath from './components/MainPath/MainPath';
 
 function Router() {
   return (

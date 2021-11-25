@@ -51,7 +51,7 @@ function Login() {
         </div>
         <div className="input">
           <input
-            className="inputId"
+            className="inputValue"
             type="text"
             name="userId"
             placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -59,23 +59,21 @@ function Login() {
             onChange={handleInputValues}
           />
           <input
-            className="inputPwd"
+            className="inputValue"
             type="password"
             name="userPwd"
             placeholder="비밀번호"
             value={inputValues.userPwd}
             onChange={handleInputValues}
           />
-          <button
-            className="loginBtn"
-            onClick={goToMain}
-            disabled={isValid ? false : true}
-          >
+          <button className="loginBtn" onClick={goToMain} disabled={!isValid}>
             로그인
           </button>
         </div>
         <footer className="forgotPwd">
-          <Link to="/login-oh">비밀번호를 잊으셨나요?</Link>
+          <Link className="link" to="/login-oh">
+            비밀번호를 잊으셨나요?
+          </Link>
         </footer>
       </div>
     </div>

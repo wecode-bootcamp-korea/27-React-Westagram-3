@@ -15,11 +15,7 @@ function Comment({ id, userName, commentText }) {
       </div>
       <img
         className="imgHeartIcon"
-        src={
-          !isLiked
-            ? '/images/eojineOh/heart.png'
-            : '/images/eojineOh/redheart.png'
-        }
+        src={`/images/eojineOh/${!isLiked ? 'heart.png' : 'redheart.png'}`}
         alt="Hearticon"
         onClick={toggleIsLiked}
       />

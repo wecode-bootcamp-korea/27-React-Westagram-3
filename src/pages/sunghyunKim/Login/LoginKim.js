@@ -7,21 +7,23 @@ import { useNavigate } from 'react-router-dom';
 function LoginKim() {
   const [form, setForm] = useState({ email: '', password: '' });
   const { email, password } = form;
+  const navigate = useNavigate();
 
-  const handleInput = e => {
+  const formInputChanged = e => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const navigate = useNavigate();
-
-  function handleLogin() {
+  const handleLogin = () => {
     alert(`로그인 되었습니다.\n${email}님 좋은 하루되세요 :)`);
     navigate('/main-kim');
-  }
-  function onKeyup(e) {
+  };
+
+  const enterToLogin = e => {
     e.key === 'Enter' && handleLogin();
-  }
+  };
+
+  const isFormValid = email.includes('@') && password.length >= 5;
 
   return (
     <section className="login-page">
@@ -35,8 +37,8 @@ function LoginKim() {
                 type="email"
                 name="email"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
-                onChange={handleInput}
-                onKeyUp={onKeyup}
+                onChange={formInputChanged}
+                onKeyUp={enterToLogin}
                 autoComplete="username"
               />
             </label>
@@ -47,21 +49,17 @@ function LoginKim() {
                 type="password"
                 name="password"
                 placeholder="비밀번호"
-                onKeyUp={onKeyup}
-                onChange={handleInput}
+                onKeyUp={enterToLogin}
+                onChange={formInputChanged}
                 autoComplete="current-password"
               />
             </label>
           </form>
           <button
-            className={`loginBtn ${
-              email.includes('@') && password.length >= 5
-                ? ''
-                : 'loginBtn--disable'
-            }`}
+            className={`loginBtn ${isFormValid ? '' : 'loginBtn--disable'}`}
             onClick={handleLogin}
             style={{
-              disabled: !email.includes('@') || !(password.length >= 5),
+              disabled: !isFormValid,
             }}
           >
             로그인

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
+import Comment from './Comment';
 
 function MainLee() {
   const [currentPopup, setCurrentPopup] = useState('');
@@ -67,19 +68,7 @@ function MainLee() {
                   <span className="font_bold">agojsgp</span> 고양이 찰칵... 더
                   보기
                 </p>
-                <ul className="feed_comment_list">
-                  <li>
-                    <span className="font_bold">dfgj_cgggg</span> 너무 귀엽다...
-                    <i className="fas fa-heart" />
-                  </li>
-                  {toDos.map((item, index) => (
-                    <li key={index}>
-                      <span className="font_bold">jihyun219 </span>
-                      {item}
-                      <i className="fas fa-heart" />
-                    </li>
-                  ))}
-                </ul>
+                <Comment toDos={toDos} />
               </div>
 
               <div className="feed_comment">

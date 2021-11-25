@@ -1,14 +1,15 @@
 import React from 'react';
+import './Comment.scss';
 
 function Comment({ onHeartClick, onDeleteComment, comment }) {
   const { nickName, commentText, commentId, isLiked } = comment;
   return (
     <div className="comment" key={commentId}>
-      <p className="comment__content">
-        <b className="comment__profile">{nickName}</b>
+      <p className="content">
+        <b className="profile">{nickName}</b>
         <span>{commentText}</span>
       </p>
-      <div className="comment__btns">
+      <div className="btns">
         <i
           className="far fa-trash-alt"
           onClick={() => onDeleteComment(commentId)}

@@ -3,8 +3,8 @@ import './FeedBtn.scss';
 
 function FeedBtn() {
   return (
-    <div className="feed__btns">
-      <div className="btns__left">
+    <div className="feed-btns">
+      <div className="btns-left">
         <button className="liked heart--liked">
           <i className="fas fa-heart" />
         </button>
@@ -15,7 +15,7 @@ function FeedBtn() {
           <i className="far fa-paper-plane" />
         </button>
       </div>
-      <div className="btns__right">
+      <div className="btns-right">
         <button className="save">
           <i className="far fa-bookmark" />
         </button>

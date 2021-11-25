@@ -1,0 +1,36 @@
+@import '../../../../../../styles/common.scss';
+
+.feed-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+
+  button {
+    padding: 8px;
+  }
+
+  i {
+    font-size: 24px;
+    color: #807d7d;
+  }
+
+  .btns {
+    &-left {
+      display: flex;
+
+      .liked {
+        padding-left: 0;
+      }
+
+      .heart--liked i {
+        color: #ed4956;
+      }
+    }
+
+    &-right {
+      button {
+        padding-right: 0px;
+      }
+    }
+  }
+}

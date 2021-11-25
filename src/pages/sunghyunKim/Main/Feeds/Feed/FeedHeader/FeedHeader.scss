@@ -1,0 +1,33 @@
+@import '../../../../../../styles/common.scss';
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+
+  .profile {
+    @include flexCenter;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin-left: 10px;
+      overflow: hidden;
+
+      b {
+        font-size: 16px;
+      }
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .fa-ellipsis-h {
+    margin: auto 0;
+    font-size: 13px;
+    color: $color-gray;
+  }
+}

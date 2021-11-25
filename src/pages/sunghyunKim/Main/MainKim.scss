@@ -1,6 +1,11 @@
 @import '../../../styles/common.scss';
 
 .main-page {
+  display: flex;
+  justify-content: center;
+  min-width: 800px;
+  background: $bg-gray;
+
   .wrapper {
     background: $white;
     border: $border-gray;
@@ -12,9 +17,9 @@
 
   .input {
     padding: 14px;
+    background: $bg-gray;
     border: $border-gray;
     border-radius: 4px;
-    background: $bg-gray;
   }
 
   .input::placeholder {
@@ -34,13 +39,6 @@
     height: 32px;
     border: $border-gray;
   }
-
-  display: flex;
-  justify-content: center;
-  min-width: 800px;
-  background: $bg-gray;
-
-  /* COMMON */
 
   .dropdownSquare {
     position: absolute;

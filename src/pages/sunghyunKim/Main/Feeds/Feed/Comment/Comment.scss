@@ -1,0 +1,43 @@
+@import '../../../../../../styles/common.scss';
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 0;
+
+  .content {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  .profile {
+    margin-right: 5px;
+    font-weight: 700;
+  }
+  .btns {
+    display: flex;
+  }
+
+  .fa-trash-alt {
+    opacity: 0;
+    color: $color-gray;
+    cursor: pointer;
+  }
+
+  &:hover .fa-trash-alt {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .fa-heart {
+    margin-left: 5px;
+    color: $color-gray;
+    font-size: 5px;
+    cursor: pointer;
+  }
+
+  .fas.fa-heart {
+    color: #ed4956;
+    font-size: 10px;
+  }
+}

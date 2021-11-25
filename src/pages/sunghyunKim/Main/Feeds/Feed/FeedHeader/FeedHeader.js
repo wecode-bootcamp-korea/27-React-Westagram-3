@@ -1,12 +1,13 @@
 import React from 'react';
 import './FeedHeader.scss';
+
 function FeedHeader({ user }) {
   const { img, name, nicName } = user;
   return (
-    <div className="feed__header feed__padding">
-      <div className="feed__profile">
+    <div className="feed-header">
+      <div className="profile">
         <img src={`/images/sunghyunKim/${img}`} alt="profile" />
-        <div className="feed__profile-info">
+        <div className="info">
           <b>{name}</b>
           <span>{nicName}</span>
         </div>

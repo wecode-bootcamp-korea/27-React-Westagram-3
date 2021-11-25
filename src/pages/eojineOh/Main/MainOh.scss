@@ -17,7 +17,7 @@
 
 @mixin rightCommon {
   margin-top: 15px;
-  border: 1px solid lightgrey;
+  border: 1px solid #ededed;
   background-color: white;
   overflow-y: auto;
 }
@@ -54,6 +54,7 @@ main {
         align-items: center;
         height: 60px;
         padding: $padding_small;
+        border-bottom: $border-gray;
 
         .imageAndId {
           @include flexStart();
@@ -98,14 +99,16 @@ main {
         height: 40px;
         padding: 6px 16px 8px;
 
-        .iconsLeft img {
-          box-sizing: content-box;
-          @include widthHeight24();
-          padding: 8px;
-        }
+        .iconsLeft {
+          img {
+            box-sizing: content-box;
+            @include widthHeight24();
+            padding: 8px;
 
-        &:first-child {
-          padding-left: 0px;
+            &:first-child {
+              padding-left: 0px;
+            }
+          }
         }
 
         .iconsRight {
@@ -273,7 +276,7 @@ main {
       top: 0px;
       background-color: white;
       z-index: 1;
-      border-bottom: 1px solid $color_light_gray;
+      border-bottom: $border-gray;
 
       button {
         font-size: 12px;
@@ -302,9 +305,21 @@ main {
       line-height: 13px;
       font-weight: 400;
       color: #c7c7c7;
+
+      ul {
+        * {
+          display: inline-block;
+          padding: 1px;
+          font-size: 11px;
+          line-height: 13px;
+          font-weight: 400;
+          color: #c7c7c7;
+        }
+      }
     }
   }
 }
+
 
 /* othersWrapper styling */
 .othersWrapper {

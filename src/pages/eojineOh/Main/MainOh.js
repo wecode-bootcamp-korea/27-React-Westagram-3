@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../../../components/Nav/Nav';
 import Comment from '../../../components/Comment/Comment';
 import { STORY_DATA } from './storyData';
 import { RECOMMEND_DATA } from './recommendData';
+import { RIGHTFOOTER_DATA } from './rightFooterData';
 import './MainOh.scss';
 
 function Main() {
@@ -85,10 +87,10 @@ function Main() {
                 <button className="showMoreBtn">더 보기</button>
               </div>
               <div className="reply">
-                {comments.map((commentText, userId) => {
+                {comments.map((commentText, id) => {
                   return (
                     <Comment
-                      key={userId}
+                      key={id}
                       userName="wecodebootcamp"
                       commentText={commentText}
                     />
@@ -103,7 +105,8 @@ function Main() {
                 type="text"
                 placeholder="댓글 달기..."
                 onChange={e => {
-                  setCommentInput(e.target.value);
+                  const { value } = e.target;
+                  setCommentInput(value);
                 }}
                 value={commentInput}
                 onKeyUp={enterkey}
@@ -174,9 +177,15 @@ function Main() {
             </div>
           </div>
           <div className="rightInfo">
-            소개·도움말·홍보·센터·API·채용 정보·개인정보처리방침·약관·위치·인기
-            계정·해시태그·언어
-            <br />
+            <ul>
+              {RIGHTFOOTER_DATA.map(data => {
+                return (
+                  <li key={data.id}>
+                    <Link to="/">{data.content}</Link>
+                  </li>
+                );
+              })}
+            </ul>
             <br />© 2021 INSTAGRAM FROM META
           </div>
         </div>

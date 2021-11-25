@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Comment.scss';
 
-function Comment({ key, userName, commentText }) {
+function Comment({ userId, userName, commentText }) {
   const [isLiked, setIsLiked] = useState(false); // 댓글에 isLiked 관련 state 생성.
 
   const toggleIsLiked = () => {

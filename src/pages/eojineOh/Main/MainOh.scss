@@ -1,5 +1,27 @@
 @import "src/styles/variables.scss";
 
+// MIxin
+@mixin widthHeight24 {
+  width: 24px;
+  height: 24px;
+}
+
+@mixin flexStart {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin fontWeightStrong {
+  font-weight: 600;
+}
+
+@mixin rightCommon {
+  margin-top: 15px;
+  border: 1px solid lightgrey;
+  background-color: white;
+  overflow-y: auto;
+}
+
 
 .main {
   background-color: $bg-gray;
@@ -8,10 +30,6 @@
 button {
   border: none;
   background-color: transparent;
-}
-
-input:focus {
-  outline: none;
 }
 
 /* main styling */
@@ -27,8 +45,8 @@ main {
   .feeds {
     article {
       width: 616px;
-      border: 1px solid $color_light_gray;
-      background-color: white;
+      border: $border-gray;
+      background-color: $white;
 
       /* feedUpper styling */
       .feedUpper {
@@ -38,8 +56,7 @@ main {
         padding: $padding_small;
 
         .imageAndId {
-          display: flex;
-          justify-content: flex-start;
+          @include flexStart();
 
           .profileImage {
             width: 32px;
@@ -51,7 +68,7 @@ main {
             margin: auto 0;
             margin-left: 15px;
             padding: 2px;
-            font-weight: 600;
+            @include fontWeightStrong();
           }
         }
 
@@ -83,27 +100,24 @@ main {
 
         .iconsLeft img {
           box-sizing: content-box;
-          width: 24px;
-          height: 24px;
+          @include widthHeight24();
           padding: 8px;
         }
 
-        img:first-child {
+        &:first-child {
           padding-left: 0px;
         }
 
         .iconsRight {
           box-sizing: content-box;
-          width: 24px;
-          height: 24px;
+          @include widthHeight24();
           padding: 8px;
         }
       }
     }
 
     .feedLike {
-      display: flex;
-      justify-content: flex-start;
+      @include flexStart();
       align-items: center;
       height: 18px;
       margin-bottom: 8px;
@@ -120,25 +134,20 @@ main {
       .liketext {
         margin-left: 10px;
         font-size: 14px;
-
-        span {
-          font-weight: 600;
-        }
       }
     }
 
     /* feedText styling */
     .feedText {
       padding: 0px 16px;
-      display: flex;
-      justify-content: flex-start;
+      @include flexStart();
       align-items: center;
       margin-bottom: 5px;
 
       .profileId {
         margin-right: 10px;
         font-size: 16px;
-        font-weight: 600;
+        @include fontWeightStrong();
       }
 
       .feedDescription {
@@ -161,14 +170,13 @@ main {
         padding: 0px 16px;
 
         .replyItSelf {
-          display: flex;
-          justify-content: flex-start;
+          @include flexStart();
           align-items: center;
 
           .shownReplyId {
             margin-right: 10px;
             font-size: 14px;
-            font-weight: 600;
+            @include fontWeightStrong();
           }
 
           .shownReplyText {
@@ -201,7 +209,7 @@ main {
       @include flexSpaceBetween();
       height: 48px;
       padding: 6px 16px;
-      border-top: 1px solid lightgrey;
+      border-top: $border-gray;
 
       .reply {
         border: none;
@@ -226,8 +234,7 @@ main {
     width: 293px;
 
     .rightMyProfile {
-      display: flex;
-      justify-content: flex-start;
+      @include flexStart();
       height: 56px;
 
       .image {
@@ -247,7 +254,7 @@ main {
         }
 
         .profileId {
-          font-weight: 600;
+          @include fontWeightStrong();
         }
 
         .profileText {
@@ -258,7 +265,7 @@ main {
 
     .upper {
       @include flexSpaceBetween();
-      font-weight: 600;
+      @include fontWeightStrong();
       align-items: center;
       height: 32px;
       padding: 0 10px;
@@ -281,18 +288,12 @@ main {
 
     .rightStory {
       height: 200px;
-      margin-top: 15px;
-      border: 1px solid lightgrey;
-      background-color: white;
-      overflow-y: auto;
+      @include rightCommon();
     }
 
     .recommend {
       height: 175px;
-      margin-top: 15px;
-      border: 1px solid lightgrey;
-      background-color: white;
-      overflow-y: auto;
+      @include rightCommon();
     }
 
     .rightInfo {
@@ -310,8 +311,7 @@ main {
   margin: 0 10px;
 
   .othersProfile {
-    display: flex;
-    justify-content: flex-start;
+    @include flexStart();
     position: relative;
     height: 48px;
     padding: 8px 0px;
@@ -327,7 +327,7 @@ main {
       align-self: center;
       margin: auto 0px;
       padding-left: 10px;
-      font-weight: 600;
+      @include fontWeightStrong();
 
       .profileId {
         height: 17px;
@@ -348,15 +348,9 @@ main {
       right: 0px;
       top: 16px;
       color: #0095f6;
-      font-weight: 600;
+      @include fontWeightStrong();
       line-height: 16px;
       font-size: 12px;
     }
-  }
-}
-
-@media screen and (max-width: 1350px) {
-  .main-right {
-    display: none;
   }
 }

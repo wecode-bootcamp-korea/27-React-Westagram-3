@@ -30,10 +30,12 @@ function Login() {
   const [inputPwd, setPwdInput] = useState('');
 
   const handleIdInput = e => {
-    setIdInput(e.target.value);
+    const { value } = e.target;
+    setIdInput(value);
   };
   const handlePwdInput = e => {
-    setPwdInput(e.target.value);
+    const { value } = e.target;
+    setPwdInput(value);
   };
 
   const isValid = inputId.includes('@') && inputPwd.length >= 5;

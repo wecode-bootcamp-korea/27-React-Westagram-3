@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Comment from '../../../components/Comment/Comment';
+import { STORY_DATA } from './storyData';
+import { RECOMMEND_DATA } from './recommendData';
 import './MainOh.scss';
 
 function Main() {
@@ -72,7 +74,7 @@ function Main() {
                   alt="profile_of_ej__oh"
                 />
                 <div className="liketext">
-                  <span>jrong.__</span> 님 외 <span>1500</span> 명이 좋아합니다
+                  <b>jrong.__</b> 님 외 <b>1500</b> 명이 좋아합니다
                 </div>
               </div>
               <div className="feedText">
@@ -83,10 +85,10 @@ function Main() {
                 <button className="showMoreBtn">더 보기</button>
               </div>
               <div className="reply">
-                {comments.map((commentText, index) => {
+                {comments.map((commentText, userId) => {
                   return (
                     <Comment
-                      key={index}
+                      key={userId}
                       userName="wecodebootcamp"
                       commentText={commentText}
                     />
@@ -130,127 +132,21 @@ function Main() {
               <button className="showAll">모두 보기</button>
             </div>
             <div className="othersWrapper">
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">15분 전</div>
-                </div>
-              </div>
+              {STORY_DATA.map(story => {
+                return (
+                  <div className="othersProfile" key={story.id}>
+                    <img
+                      className="image"
+                      src={story.profileImage}
+                      alt={story.profileID}
+                    />
+                    <div className="others">
+                      <div className="profileId">{story.profileID}</div>
+                      <div className="ago">{story.ago}</div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="recommend">
@@ -259,138 +155,22 @@ function Main() {
               <button className="showMore">모두 보기</button>
             </div>
             <div className="othersWrapper">
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
-              <div className="othersProfile">
-                <img
-                  className="image"
-                  src="/images/eojineOh/profile_of_ej__oh.JPG"
-                  alt="ej__oh"
-                />
-                <div className="others">
-                  <div className="profileId">ej__oh</div>
-                  <div className="ago">회원님을 위한 추천입니다.</div>
-                </div>
-                <button className="followOther">팔로우</button>
-              </div>
+              {RECOMMEND_DATA.map(recommend => {
+                return (
+                  <div className="othersProfile" key={recommend.id}>
+                    <img
+                      className="image"
+                      src={recommend.profileImage}
+                      alt={recommend.profileId}
+                    />
+                    <div className="others">
+                      <div className="profileId">{recommend.profileId}</div>
+                      <div className="ago">회원님을 위한 추천입니다.</div>
+                    </div>
+                    <button className="followOther">팔로우</button>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="rightInfo">

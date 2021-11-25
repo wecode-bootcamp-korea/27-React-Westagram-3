@@ -25,6 +25,7 @@
   height: 100%;
 }
 
+// Variables
 $bg-gray: #fafafa;
 
 $border-light-gray: #ededed;
@@ -39,7 +40,7 @@ $btn-blue: #5bb2ff;
 
 $white: #fff;
 
-$border-gray: $border-light-gray 1px solid;
+$border-gray: 1px solid $border-light-gray;
 
 $padding_small: 14px;
 $icon_small: 24px;

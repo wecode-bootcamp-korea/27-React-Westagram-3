@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
 import './Nav.scss';
 
 function Nav({ setCurrentPopup, currentPopup }) {

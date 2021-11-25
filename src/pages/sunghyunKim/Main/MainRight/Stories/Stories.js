@@ -26,17 +26,11 @@ function Stories() {
     },
   ];
   return (
-    <div className="right-wrapper wrapper">
-      <div className="right-header">
-        <span className="right-title">스토리</span>
-        <span className="showAll">모두 보기</span>
-      </div>
-      <ul className="stories">
-        {stories.map((story, i) => (
-          <Story story={story} key={i} />
-        ))}
-      </ul>
-    </div>
+    <ul className="stories">
+      {stories.map((story, i) => (
+        <Story story={story} key={i} />
+      ))}
+    </ul>
   );
 }
 

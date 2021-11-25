@@ -14,7 +14,7 @@ function Footer() {
           );
         })}
       </ul>
-      <span className="copyright"> © 2019 INSTAGRAM </span>
+      <span className="copyright"> © 2021 WESTAGRAM </span>
     </footer>
   );
 }

@@ -1,0 +1,17 @@
+@import '../../../../../styles/common.scss';
+
+.main-right-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  font-size: 13px;
+  font-weight: 600;
+
+  .title {
+    color: $color-gray;
+  }
+
+  .show-all {
+    cursor: pointer;
+  }
+}

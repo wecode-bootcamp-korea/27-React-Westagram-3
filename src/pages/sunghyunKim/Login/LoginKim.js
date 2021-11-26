@@ -1,13 +1,12 @@
 import React from 'react';
-import './LoginKim.scss';
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './LoginKim.scss';
 
 function LoginKim() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ email: '', password: '' });
   const { email, password } = form;
-  const navigate = useNavigate();
 
   const formInputChanged = e => {
     const { name, value } = e.target;

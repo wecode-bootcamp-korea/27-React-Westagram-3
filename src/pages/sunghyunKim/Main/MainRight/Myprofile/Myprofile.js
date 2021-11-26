@@ -1,5 +1,6 @@
 import React from 'react';
 import './Myprofile.scss';
+
 function Myprofile() {
   return (
     <div className="myprofile">

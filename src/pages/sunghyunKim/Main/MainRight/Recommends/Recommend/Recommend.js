@@ -1,5 +1,6 @@
 import React from 'react';
 import './Recommend.scss';
+
 function Recommend({ recommend }) {
   const { img, username, info } = recommend;
   return (
@@ -11,7 +12,7 @@ function Recommend({ recommend }) {
           <span>{info}</span>
         </div>
       </div>
-      <button className="main-btn">팔로우</button>
+      <button>팔로우</button>
     </li>
   );
 }

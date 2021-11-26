@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Feed from './Feed/Feed';
 import './Feeds.scss';
+
 function Feeds() {
   const [feeds, setFeeds] = useState([]);
 

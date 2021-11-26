@@ -3,6 +3,7 @@ import './Comment.scss';
 
 function Comment({ onHeartClick, onDeleteComment, comment }) {
   const { nickName, commentText, commentId, isLiked } = comment;
+
   return (
     <div className="comment" key={commentId}>
       <p className="content">

@@ -1,6 +1,6 @@
 import React from 'react';
-import { RECOMMENDS } from '../../../../../data/mainData';
 import Recommend from './Recommend/Recommend';
+import { RECOMMENDS } from '../../../../../data/mainData';
 import './Recommends.scss';
 
 function Recommends() {

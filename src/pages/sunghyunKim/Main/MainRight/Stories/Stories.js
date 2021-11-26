@@ -1,7 +1,7 @@
 import React from 'react';
+import Story from './Story/Story';
 import { STORIES } from '../../../../../data/mainData';
 import './Stories.scss';
-import Story from './Story/Story';
 
 function Stories() {
   return (

@@ -1,48 +1,9 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { USERS_INFO } from '../../data/mainData';
 import './Nav.scss';
 
 function Nav({ setCurrentPopup, currentPopup }) {
-  const usersInfo = [
-    {
-      id: 1,
-      username: '짹짹',
-      userInfo: '나의 잭',
-      img: 'p4.jpeg',
-    },
-    {
-      id: 2,
-      username: 'hellolove',
-      userInfo: '',
-      img: 'search2.jpg',
-    },
-    {
-      id: 3,
-      username: 'nypl',
-      userInfo: '',
-      img: 'p1.jpeg',
-    },
-    {
-      id: 4,
-      username: 'hwnhwan12',
-      userInfo: '겸손',
-      img: 'p7.jpeg',
-    },
-    {
-      id: 5,
-      username: 'helloworld',
-      userInfo: 'love love love',
-      img: 'search1.jpg',
-    },
-    {
-      id: 6,
-      username: 'hellowecode',
-      userInfo: '에러로부터 코드를 지키자!',
-      img: 'post3.png',
-    },
-  ];
-
   const [searchInput, setSearchInput] = useState('');
   const [searchResultNone, setSearchResultNone] = useState(false);
   const [searchResult, setSearchResult] = useState('');
@@ -63,7 +24,7 @@ function Nav({ setCurrentPopup, currentPopup }) {
       setSearchResultNone(true);
       return;
     }
-    const filteredUsers = getUsers(searchValue, usersInfo);
+    const filteredUsers = getUsers(searchValue, USERS_INFO);
     if (!filteredUsers.length) {
       setSearchResultNone(true);
       setSearchResult('');

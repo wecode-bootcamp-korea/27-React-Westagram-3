@@ -1,5 +1,4 @@
-import React from 'react';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Comment from './Comment/Comment';
 import FeedBtn from './FeedBtn/FeedBtn';
 import FeedHeader from './FeedHeader/FeedHeader';
@@ -8,7 +7,6 @@ import './Feed.scss';
 function Feed({ feedInfo }) {
   const currentUser = 'ria';
 
-  // const [feed, setFeed] = useState(feedInfo);
   const { feedUserInfo, feedImg, whoLiked, feedContent, time } = feedInfo;
   const [comments, setComments] = useState(feedInfo.comments);
   const [commentValid, setCommentValid] = useState(false);
@@ -16,7 +14,7 @@ function Feed({ feedInfo }) {
 
   const nextCommnetId = useRef(comments.length + 1);
 
-  const onCreateComment = () => {
+  const createComment = () => {
     const commentText = commentInput.trim();
     if (!commentText.length) {
       alert('댓글을 입력해주세요!');
@@ -44,7 +42,7 @@ function Feed({ feedInfo }) {
 
   const onCommentInputKeyup = e => {
     if (e.key === 'Enter') {
-      onCreateComment();
+      createComment();
       return;
     }
   };
@@ -66,7 +64,7 @@ function Feed({ feedInfo }) {
   }
 
   return (
-    <article className="feed wrapper">
+    <article className="feed">
       <FeedHeader user={feedUserInfo} />
       <div className="feed__img">
         <img src={`/images/sunghyunKim/${feedImg}`} alt="feed" />
@@ -112,7 +110,7 @@ function Feed({ feedInfo }) {
         <button
           id="addCommentBtn"
           className={`main-btn ${commentValid ? '' : 'main-btn--disable'}`}
-          onClick={onCreateComment}
+          onClick={createComment}
           style={{ disabled: commentValid ? 'false' : 'true' }}
         >
           게시

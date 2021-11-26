@@ -1,6 +1,7 @@
 import React from 'react';
 import { INFO_LIST } from '../../../../data/footData';
 import './Footer.scss';
+
 function Footer() {
   return (
     <footer className="footer">

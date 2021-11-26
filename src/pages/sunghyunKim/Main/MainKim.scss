@@ -6,68 +6,11 @@
   min-width: 800px;
   background: $bg-gray;
 
-  .wrapper {
-    background: $white;
-    border: $border-gray;
-  }
-
-  .moreDetail {
-    color: $color-gray;
-  }
-
-  .input {
-    padding: 14px;
-    background: $bg-gray;
-    border: $border-gray;
-    border-radius: 4px;
-  }
-
-  .input::placeholder {
-    color: $color-gray;
-    font-weight: 500;
-  }
-
   button {
     background: none;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-
-  img {
-    width: 32px;
-    height: 32px;
-    border: $border-gray;
-  }
-
-  .dropdownSquare {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background: $bg-gray;
-    transform: rotate(45deg);
-    box-shadow: -2px -2px 3px 0px #e7e7e7;
-  }
-
-  .dropdown {
-    padding: 11px 0;
-    background: $bg-gray;
-    box-shadow: 0px 0px 6px -1px #d3d3d3;
-    border: $border-gray;
-    border-radius: 5px;
-  }
-
-  /* MAIN */
-
-  .main-btn {
-    color: $btn-blue;
-    cursor: pointer;
-    opacity: 1;
-
-    &--disable {
-      opacity: 0.5;
-      cursor: auto;
-    }
   }
 
   .main {
@@ -77,13 +20,7 @@
     margin-top: 90px;
     max-width: 930px;
     padding: 0 10px;
-
-    img {
-      border-radius: 50%;
-    }
   }
-
-  /* MAIN RIGHT */
 
   @media (max-width: 900px) {
     .main-page {

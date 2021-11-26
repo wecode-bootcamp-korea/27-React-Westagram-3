@@ -8,6 +8,10 @@
     display: flex;
 
     img {
+      width: 32px;
+      height: 32px;
+      border: $border-gray;
+      border-radius: 50%;
       object-fit: cover;
     }
   }
@@ -15,6 +19,8 @@
   & > button {
     font-size: 13px;
     font-weight: 600;
+    color: $btn-blue;
+    cursor: pointer;
   }
 
   &__info {

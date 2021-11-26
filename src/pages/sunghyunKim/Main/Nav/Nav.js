@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
-import './Nav.scss';
 import { USERS_INFO } from '../../../../data/mainData';
+import './Nav.scss';
 
 function Nav({ setCurrentPopup, currentPopup }) {
   const [searchInput, setSearchInput] = useState('');
@@ -38,22 +37,22 @@ function Nav({ setCurrentPopup, currentPopup }) {
     setSearchResult(filteredUsers);
   };
 
-  const onSearchWrapperClick = e => {
+  const clickSearchWrapper = e => {
     e.stopPropagation();
     searchRef.current.focus();
   };
 
-  const onSearchInputFocus = () => {
+  const focusSearchInput = () => {
     setCurrentPopup('search');
     setSearchFocus(true);
     setShowSearchText(false);
   };
 
-  const onSearchInputBlur = () => {
+  const unshowSearchText = () => {
     !searchInput ? setShowSearchText(true) : setShowSearchText(false);
   };
 
-  const onNavProfileClick = e => {
+  const setNavprofileAsCurpop = e => {
     e.stopPropagation();
     setCurrentPopup('profileDropdown');
   };
@@ -64,17 +63,13 @@ function Nav({ setCurrentPopup, currentPopup }) {
           <img src="/images/sunghyunKim/instagram.png" alt="logo" />
           <div className="logo__title">Westagram</div>
         </Link>
-        <div
-          id="search"
-          className="search input"
-          onClick={onSearchWrapperClick}
-        >
+        <div id="search" className="search input" onClick={clickSearchWrapper}>
           <input
             type="text"
             className="search__input"
             ref={searchRef}
-            onFocus={onSearchInputFocus}
-            onBlur={onSearchInputBlur}
+            onFocus={focusSearchInput}
+            onBlur={unshowSearchText}
             onChange={e => showSearchedUsers(e)}
             value={searchInput}
           />
@@ -131,7 +126,7 @@ function Nav({ setCurrentPopup, currentPopup }) {
           </div>
           <div
             className="nav-btn__profile nav-btn"
-            onClick={e => onNavProfileClick(e)}
+            onClick={e => setNavprofileAsCurpop(e)}
           >
             <img src="/images/sunghyunKim/maria3.jpeg" alt="profile" />
             <div className="nav-btn__more nav-btn__more--none" />

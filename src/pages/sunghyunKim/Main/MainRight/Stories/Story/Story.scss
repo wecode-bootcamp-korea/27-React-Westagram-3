@@ -2,12 +2,15 @@
 .story {
   display: flex;
   margin: 7px 0;
-
   img {
+    width: 32px;
+    height: 32px;
     padding: 1px;
+    border: $border-gray;
     background: linear-gradient(#fff, #fff) padding-box,
       linear-gradient(to left bottom, #ff5f5f, #fdae65) border-box;
     border: 2px solid transparent;
+    border-radius: 50%;
     vertical-align: middle;
     object-fit: cover;
   }

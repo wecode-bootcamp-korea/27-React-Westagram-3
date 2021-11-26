@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Comment.scss';
 
-function Comment({ id, userName, commentText }) {
-  const [isLiked, setIsLiked] = useState(false); // 댓글에 isLiked 관련 state 생성.
-
-  const toggleIsLiked = () => {
-    setIsLiked(!isLiked); // isLiked에 들어간 booelan 값을 계속해서 toggle
-  };
+function Comment({ id, userName, commentText, isLiked, toggleIsLiked }) {
   return (
     <div className="replyChunk">
       <div className="replyItSelf">
@@ -16,8 +11,8 @@ function Comment({ id, userName, commentText }) {
       <img
         className="imgHeartIcon"
         src={`/images/eojineOh/${!isLiked ? 'heart.png' : 'redheart.png'}`}
-        alt="Hearticon"
         onClick={toggleIsLiked}
+        alt="Hearticon"
       />
     </div>
   );

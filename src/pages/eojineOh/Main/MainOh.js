@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../../../components/Nav/Nav';
 import Comment from '../Comment/Comment';
@@ -9,13 +9,14 @@ import './MainOh.scss';
 
 function Main() {
   const [currentPopup, setCurrentPopup] = useState('');
-  const [commentInput, setCommentInput] = useState(''); // comment input state 생성.
-  const [comments, setComments] = useState([]); // feed에 들어갈 comment들 관련 state 생성.
+  const [commentInput, setCommentInput] = useState({}); // comment input state 생성.
+  const [commentList, setcommentList] = useState([]); // feed에 들어갈 comment들 관련 state 생성.
 
   function addComment() {
     if (commentInput) {
       // commentInput state가 값이 있으면(truthy이라면)
-      setComments([...comments, commentInput]); // 스프레드 연산자를 통해 comments 배열을 불러온 후 commentInput에 들어간 값을 다음 배열 요소로 넣고
+      setcommentList(commentList.concat([commentInput])); // 스프레드 연산자를 통해 commentList 배열을 전개한 후 commentInput에 들어간 값을 다음 배열 요소로 넣고
+
       setCommentInput(''); // commentInput state를 빈 문자열로 변경.
     }
   }
@@ -27,9 +28,35 @@ function Main() {
     }
   }
 
+  function handleComment(e) {
+    const { value } = e.target;
+    setCommentInput({
+      ...commentInput,
+      userName: 'wecode',
+      commentText: value,
+      isLiked: false,
+    });
+  }
+
   const onBodyClick = e => {
     !!currentPopup && setCurrentPopup('');
   };
+
+  const [isLiked, setIsLiked] = useState(false); // 댓글에 isLiked 관련 state 생성.
+
+  const toggleIsLiked = () => {
+    setIsLiked(!isLiked); // isLiked에 들어간 booelan 값을 계속해서 toggle
+  };
+
+  useEffect(() => {
+    fetch('/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setcommentList(data);
+      });
+  }, []);
 
   return (
     <div className="main" onClick={e => onBodyClick(e)}>
@@ -85,12 +112,14 @@ function Main() {
                 <button className="showMoreBtn">더 보기</button>
               </div>
               <div className="reply">
-                {comments.map((commentText, id) => {
+                {commentList.map(el => {
                   return (
                     <Comment
-                      key={id}
-                      userName="wecodebootcamp"
-                      commentText={commentText}
+                      key={el.id}
+                      userName={el.userName}
+                      commentText={el.commentText}
+                      isLiked={el.isLiked}
+                      toggleIsLiked={toggleIsLiked}
                     />
                   );
                 })}
@@ -102,11 +131,8 @@ function Main() {
                 className="reply"
                 type="text"
                 placeholder="댓글 달기..."
-                onChange={e => {
-                  const { value } = e.target;
-                  setCommentInput(value);
-                }}
-                value={commentInput}
+                onChange={handleComment}
+                value={commentInput.commentText}
                 onKeyUp={handleEnterKey}
               />
               <button className="replyBtn" onClick={addComment}>

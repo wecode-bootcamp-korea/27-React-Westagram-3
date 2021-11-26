@@ -8,7 +8,7 @@ function MainPath() {
       <section>
         <h1>Login</h1>
         <Link className="profile" to="/login-oh">
-          <button style={{}}>오동녘어진이</button>
+          <button>오동녘어진이</button>
         </Link>
         <Link className="profile" to="/login-kim">
           <button>김성현</button>

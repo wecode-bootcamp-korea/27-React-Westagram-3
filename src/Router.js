@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainPath from './components/MainPath/MainPath';
 import LoginOh from './pages/eojineOh/Login/LoginOh';
 import LoginKim from './pages/sunghyunKim/Login/LoginKim';
 import LoginWon from './pages/soyeonWon/Login/LoginWon';
@@ -13,6 +14,7 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<MainPath />} />
         <Route path="/login-oh" element={<LoginOh />} />
         <Route path="/login-kim" element={<LoginKim />} />
         <Route path="/login-won" element={<LoginWon />} />

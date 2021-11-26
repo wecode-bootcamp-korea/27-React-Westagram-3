@@ -9,7 +9,6 @@ function Feed({ feedInfo }) {
 
   const { feedUserInfo, feedImg, whoLiked, feedContent, time } = feedInfo;
   const [comments, setComments] = useState(feedInfo.comments);
-  const [commentValid, setCommentValid] = useState(false);
   const [commentInput, setCommentInput] = useState('');
 
   const nextCommnetId = useRef(comments.length + 1);
@@ -17,6 +16,7 @@ function Feed({ feedInfo }) {
   const createComment = () => {
     const commentText = commentInput.trim();
     if (!commentText.length) {
+      setCommentInput('');
       alert('댓글을 입력해주세요!');
       return;
     }
@@ -31,23 +31,23 @@ function Feed({ feedInfo }) {
     ]);
     nextCommnetId.current += 1;
     setCommentInput('');
-    setCommentValid(false);
+    // setCommentValid(false);
   };
 
-  const onCommentInputChange = e => {
-    const commentValue = e.target.value.trim();
+  const commentValueChange = e => {
+    // const commentValue = e.target.value.trim();
     setCommentInput(e.target.value);
-    !commentValue ? setCommentValid(false) : setCommentValid(true);
+    // !commentValue ? setCommentValid(false) : setCommentValid(true);
   };
 
-  const onCommentInputKeyup = e => {
+  const createCommentWhenEnter = e => {
     if (e.key === 'Enter') {
       createComment();
       return;
     }
   };
 
-  const onHeartClick = id => {
+  const changeHeart = id => {
     setComments(
       comments.map(c =>
         c.commentId === id ? { ...c, isLiked: !c.isLiked } : c
@@ -55,7 +55,7 @@ function Feed({ feedInfo }) {
     );
   };
 
-  const onDeleteComment = id => {
+  const deleteComment = id => {
     setComments(comments.filter(c => c.commentId !== id));
   };
 
@@ -90,8 +90,8 @@ function Feed({ feedInfo }) {
       <div className="feed__comments feed__padding">
         {comments.map(comment => (
           <Comment
-            onHeartClick={onHeartClick}
-            onDeleteComment={onDeleteComment}
+            onHeartClick={changeHeart}
+            onDeleteComment={deleteComment}
             comment={comment}
             key={comment.commentId}
           />
@@ -103,15 +103,15 @@ function Feed({ feedInfo }) {
           id="commentInput"
           type="text"
           placeholder="댓글 달기..."
-          onKeyUp={onCommentInputKeyup}
-          onChange={onCommentInputChange}
+          onKeyUp={createCommentWhenEnter}
+          onChange={commentValueChange}
           value={commentInput}
         />
         <button
           id="addCommentBtn"
-          className={`main-btn ${commentValid ? '' : 'main-btn--disable'}`}
+          className={`main-btn ${!!commentInput ? '' : 'main-btn--disable'}`}
           onClick={createComment}
-          style={{ disabled: commentValid ? 'false' : 'true' }}
+          style={{ disabled: !!commentInput ? 'false' : 'true' }}
         >
           게시
         </button>

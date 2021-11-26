@@ -31,13 +31,10 @@ function Feed({ feedInfo }) {
     ]);
     nextCommnetId.current += 1;
     setCommentInput('');
-    // setCommentValid(false);
   };
 
   const commentValueChange = e => {
-    // const commentValue = e.target.value.trim();
     setCommentInput(e.target.value);
-    // !commentValue ? setCommentValid(false) : setCommentValid(true);
   };
 
   const createCommentWhenEnter = e => {

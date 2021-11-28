@@ -1,0 +1,277 @@
+@import '../../../styles/variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main_background {
+  @include flexHorCenter;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: $bg-gray;
+}
+
+input:focus {
+  outline: none;
+}
+
+.font_bold {
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+
+.main {
+  @include flexHorCenter;
+  width: 935px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+}
+
+.main .feeds {
+  width: 614px;
+  background-color: $white;
+  border: $border-gray;
+}
+
+.main_right {
+  width: 293px;
+  margin-left: 30px;
+  background-color: $bg-gray;
+}
+
+.feed_top {
+  @include flexSpaceBetween;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  .feed_user {
+    @include flexVerCenter;
+
+    img {
+      width: 28px;
+      margin-right: 10px;
+      border-radius: 14px;
+    }
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .fas {
+    display: inline-block;
+    color: $color-gray;
+    font-size: 20px;
+  }
+}
+
+.feed_img {
+  img {
+    width: 100%;
+  }
+}
+
+.feed_function {
+  @include flexSpaceBetween;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 2px 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+
+  i {
+    margin-right: 8px;
+  }
+
+  .fa-heart {
+    color: red;
+  }
+}
+
+.feed_like {
+  @include flexVerCenter;
+  padding: 2px 10px;
+
+  img {
+    width: 28px;
+    margin-right: 10px;
+    border-radius: 14px;
+  }
+}
+
+.feed_content {
+  padding: 10px;
+
+  p {
+    margin-bottom: 8px;
+  }
+
+  .feed_comment_list {
+    li {
+      margin-bottom: 8px;
+      list-style: none;
+    }
+
+    .fa-heart {
+      display: block;
+      float: right;
+      line-height: 21.6px;
+    }
+  }
+}
+
+.feed_comment {
+  form {
+    position: relative;
+    width: 100%;
+    height: 50px;
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      border: $border-gray;
+      box-sizing: border-box;
+    }
+
+    .post_comment {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border: none;
+      color: $btn-blue;
+      background-color: $white;
+    }
+  }
+}
+
+.main_right_profile {
+  display: flex;
+  width: 100%;
+  padding: 0 10px 15px 10px;
+  box-sizing: border-box;
+
+  img {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+}
+
+.profile {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.gray_color {
+  display: block;
+  margin-top: 5px;
+  color: $color-gray;
+  font-weight: normal;
+}
+
+.main_right_story {
+  width: 100%;
+  padding: 10px 10px 5px 10px;
+  background-color: white;
+  box-sizing: border-box;
+  border: $border-gray;
+}
+
+.main_right_story .story_view {
+  @include flexSpaceBetween;
+  align-items: center;
+  margin-bottom: 5px;
+
+  .story {
+    color: $color-gray;
+    font-weight: bold;
+  }
+
+  .all {
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+
+.main_right_story .user_stories {
+  div {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      border: 2px solid red;
+      border-radius: 15px;
+    }
+  }
+}
+
+.main_right_recommend {
+  width: 100%;
+  margin: 15px 0 0 0;
+  padding: 10px 10px 5px 10px;
+  background-color: $white;
+  border: $border-gray;
+  box-sizing: border-box;
+
+  .recommend_for_you {
+    @include flexSpaceBetween;
+    align-items: center;
+    margin-bottom: 5px;
+
+    .recommend {
+      color: $color-gray;
+      font-weight: bold;
+    }
+
+    .all {
+      font-size: 13px;
+      font-weight: bold;
+    }
+  }
+}
+
+.main_right_recommend .user_profiles {
+  .user_profile_one {
+    @include flexSpaceBetween;
+    align-items: center;
+    padding: 10px;
+
+    div {
+      @include flexVerCenter;
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 15px;
+      }
+    }
+
+    .follow {
+      color: #37a5e8;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+}
+
+.main_right .information {
+  margin-top: 15px;
+  color: $color-gray;
+  font-size: 15px;
+  line-height: 24px;
+}

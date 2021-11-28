@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './Comment';
+import { STORY_DATA } from './Story';
+import { RECOMMEND_DATA } from './Recommed';
 
 function MainLee() {
   const [currentPopup, setCurrentPopup] = useState('');
@@ -23,7 +25,6 @@ function MainLee() {
     }
     setToDos(currentArray => [...currentArray, toDo]);
     setToDo('');
-    // console.log(toDos);   // 왜 처음엔 빈 array가 출력될까?
   }
 
   return (
@@ -100,7 +101,18 @@ function MainLee() {
               </div>
 
               <div className="user_stories">
-                <div>
+                {STORY_DATA.map(story => {
+                  return (
+                    <div key={story.id}>
+                      <img src={story.src} alt="profile" />
+                      <p className="profile">
+                        {story.userId}
+                        <span className="gray_color">{story.userName}</span>
+                      </p>
+                    </div>
+                  );
+                })}
+                {/* <div>
                   <img src="/images/jihyunLee/profile.jpg" alt="profile" />
                   <p className="profile">
                     jihyun219<span className="gray_color">이지현</span>
@@ -118,18 +130,7 @@ function MainLee() {
                     jihyun219<span className="gray_color">이지현</span>
                   </p>
                 </div>
-                <div>
-                  <img src="/images/jihyunLee/profile.jpg" alt="profile" />
-                  <p className="profile">
-                    jihyun219<span className="gray_color">이지현</span>
-                  </p>
-                </div>
-                <div>
-                  <img src="/images/jihyunLee/profile.jpg" alt="profile" />
-                  <p className="profile">
-                    jihyun219<span className="gray_color">이지현</span>
-                  </p>
-                </div>
+                 */}
               </div>
             </div>
 
@@ -140,7 +141,21 @@ function MainLee() {
               </div>
 
               <div className="user_profiles">
-                <div className="user_profile_one">
+                {RECOMMEND_DATA.map(story => {
+                  return (
+                    <div className="user_profile_one" key={story.id}>
+                      <div>
+                        <img src={story.src} alt="profile" />
+                        <p className="profile">
+                          {story.userId}
+                          <span className="gray_color">{story.userName}</span>
+                        </p>
+                      </div>
+                      <p className="follow">팔로우</p>
+                    </div>
+                  );
+                })}
+                {/* <div className="user_profile_one">
                   <div>
                     <img src="/images/jihyunLee/profile.jpg" alt="profile" />
                     <p className="profile">
@@ -166,7 +181,7 @@ function MainLee() {
                     </p>
                   </div>
                   <p className="follow">팔로우</p>
-                </div>
+                </div> */}
               </div>
             </div>
 
